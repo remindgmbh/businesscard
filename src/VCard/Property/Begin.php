@@ -2,12 +2,13 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
+use Remind\BusinessCard\VCard\Property\Property;
 use Remind\BusinessCard\VCard\Properties;
 
 /**
  * Description of Begin
  */
-class Begin {
+class Begin implements Property {
 
     /**
      * @var string
@@ -20,7 +21,7 @@ class Begin {
     const VALUE = 'VCARD';
 
     /**
-     * 
+     *
      */
     public function __construct() {}
 
@@ -30,5 +31,9 @@ class Begin {
      */
     public function __toString() {
         return self::NAME . ':' . self::VALUE;
+    }
+
+    public function getName() {
+        return self::NAME;
     }
 }

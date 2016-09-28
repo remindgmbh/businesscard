@@ -1,7 +1,7 @@
 {
     "name": "remind/rmnd-businesscard",
     "description": "rmnd_businesscard.",
-    "version": "0.1.2",
+    "version": "0.2.0",
     "type": "library",
     "keywords": ["vcard", "vcf", "library"],
     "license": ["GPL-3.0+"],

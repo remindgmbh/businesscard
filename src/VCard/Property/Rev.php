@@ -3,11 +3,12 @@
 namespace Remind\BusinessCard\VCard\Property;
 
 use Remind\BusinessCard\VCard\Properties;
+use Remind\BusinessCard\VCard\Property\Property;
 
 /**
  * Description of Rev
  */
-class Rev {
+class Rev implements Property {
 
     /**
      * @var string
@@ -38,6 +39,10 @@ class Rev {
      */
     public function __toString() {
         return self::NAME . ':' . $this->date->format(self::DATE_FORMAT);
+    }
+
+    public function getName() {
+        return self::NAME;
     }
 
     /**

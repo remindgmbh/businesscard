@@ -2,12 +2,13 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
+use Remind\BusinessCard\VCard\Property\Property;
 use Remind\BusinessCard\VCard\Properties;
 
 /**
  * Description of End
  */
-class End {
+class End implements Property {
 
     /**
      * @var string
@@ -30,5 +31,9 @@ class End {
      */
     public function __toString() {
         return self::NAME . ':' . self::VALUE;
+    }
+
+    public function getName() {
+        return self::NAME;
     }
 }

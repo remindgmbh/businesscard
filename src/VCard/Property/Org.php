@@ -3,11 +3,12 @@
 namespace Remind\BusinessCard\VCard\Property;
 
 use Remind\BusinessCard\VCard\Properties;
+use Remind\BusinessCard\VCard\Property\Property;
 
 /**
  * Description of Org
  */
-class Org {
+class Org implements Property {
 
     /**
      * @var string
@@ -37,11 +38,15 @@ class Org {
         return self::NAME . ';' . $this->name;
     }
 
+    public function getName() {
+        return self::NAME;
+    }
+
     /**
      *
      * @return string
      */
-    public function getName() {
+    public function getOrgName() {
         return $this->name;
     }
 
@@ -49,7 +54,7 @@ class Org {
      *
      * @param string $name
      */
-    public function setName($name) {
+    public function setOrgName($name) {
         $this->name = $name;
     }
 }

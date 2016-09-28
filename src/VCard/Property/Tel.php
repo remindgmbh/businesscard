@@ -6,11 +6,12 @@ use Remind\BusinessCard\VCard\Parameter\Pref;
 use Remind\BusinessCard\VCard\Parameter\TypeTelephone;
 use Remind\BusinessCard\VCard\Parameter\Value;
 use Remind\BusinessCard\VCard\Properties;
+use Remind\BusinessCard\VCard\Property\Property;
 
 /**
  * Description of Tel
  */
-class Tel {
+class Tel implements Property {
 
     /**
      * @var
@@ -63,6 +64,10 @@ class Tel {
         return implode(';', [
             self::NAME, $this->value, $this->pref, $this->type, $this->content
         ]);
+    }
+
+    public function getName() {
+        return self::NAME;
     }
 
     /**

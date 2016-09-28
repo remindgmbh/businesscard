@@ -2,12 +2,13 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
+use Remind\BusinessCard\VCard\Property\Property;
 use Remind\BusinessCard\VCard\Properties;
 
 /**
  * Description of Fn
  */
-class Fn {
+class Fn implements Property {
 
     /**
      * @var string
@@ -34,6 +35,10 @@ class Fn {
      */
     public function __toString() {
         return self::NAME . ':' . $this->identifier;
+    }
+
+    public function getName() {
+        return self::NAME;
     }
 
     /**

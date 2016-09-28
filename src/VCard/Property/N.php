@@ -3,11 +3,12 @@
 namespace Remind\BusinessCard\VCard\Property;
 
 use Remind\BusinessCard\VCard\Properties;
+use Remind\BusinessCard\VCard\Property\Property;
 
 /**
  * Description of N
  */
-class N {
+class N implements Property {
 
     /**
      * @var string
@@ -67,6 +68,10 @@ class N {
             $this->honorificPrefixes,
             $this->honorificSuffixes
         ]);
+    }
+
+    public function getName() {
+        return self::NAME;
     }
 
     /**

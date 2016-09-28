@@ -4,12 +4,13 @@ namespace Remind\BusinessCard\VCard\Property;
 
 use Remind\BusinessCard\VCard\Parameter\Pref;
 use Remind\BusinessCard\VCard\Parameter\Type;
+use Remind\BusinessCard\VCard\Property\Property;
 use Remind\BusinessCard\VCard\Properties;
 
 /**
  * Description of Email
  */
-class Email {
+class Email implements Property {
 
     /**
      * @var string
@@ -43,6 +44,10 @@ class Email {
         $this->type = $type;
         $this->value = $value;
         $this->pref = new Pref(Pref::HIGHEST);
+    }
+
+    public function getName() {
+        return self::NAME;
     }
 
     /**

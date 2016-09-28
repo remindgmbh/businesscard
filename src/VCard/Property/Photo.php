@@ -3,13 +3,13 @@
 namespace Remind\BusinessCard\VCard\Property;
 
 use Remind\BusinessCard\VCard\Properties;
-
+use Remind\BusinessCard\VCard\Property\Property;
 use Remind\BusinessCard\VCard\Property\Version;
 
 /**
  * Description of Photo
  */
-class Photo {
+class Photo implements Property {
 
     /**
      * Name of the property this class represents
@@ -79,6 +79,10 @@ class Photo {
             default:
                 return '';
         }
+    }
+
+    public function getName() {
+        return self::NAME;
     }
 
     /**

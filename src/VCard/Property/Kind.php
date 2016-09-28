@@ -3,13 +3,14 @@
 namespace Remind\BusinessCard\VCard\Property;
 
 use Remind\BusinessCard\VCard\Properties;
+use Remind\BusinessCard\VCard\Property\Property;
 
 /**
  * Description of Kind
  *
  * @link https://tools.ietf.org/html/rfc6350#section-6.1.4
  */
-class Kind {
+class Kind implements Property {
 
     /**
      * Name of the vCard property this class represents.
@@ -81,6 +82,10 @@ class Kind {
      */
     public function __toString() {
         return self::NAME . ':' . $this->type;
+    }
+
+    public function getName() {
+        return self::NAME;
     }
 
     /**

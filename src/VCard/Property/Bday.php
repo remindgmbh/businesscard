@@ -2,12 +2,13 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
+use Remind\BusinessCard\VCard\Property\Property;
 use Remind\BusinessCard\VCard\Properties;
 
 /**
  * Description of Bday
  */
-class Bday {
+class Bday implements Property {
 
     const NAME = Properties::BDAY;
 
@@ -36,6 +37,10 @@ class Bday {
      */
     public function __toString() {
         return self::NAME . ':' . $this->date->format(self::DATE_FORMAT);
+    }
+
+    public function getName() {
+        return self::NAME;
     }
 
     /**

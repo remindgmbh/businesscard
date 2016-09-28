@@ -3,11 +3,12 @@
 namespace Remind\BusinessCard\VCard\Property;
 
 use Remind\BusinessCard\VCard\Properties;
+use Remind\BusinessCard\VCard\Property\Property;
 
 /**
  * Description of Uid
  */
-class Uid {
+class Uid implements Property {
 
     /**
      * @var string
@@ -45,6 +46,10 @@ class Uid {
         } else {
             return self::NAME . ':urn:uuid:' . $this->uuid;
         }
+    }
+
+    public function getName() {
+        return self::NAME;
     }
 
     /**

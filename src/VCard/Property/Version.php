@@ -3,11 +3,12 @@
 namespace Remind\BusinessCard\VCard\Property;
 
 use Remind\BusinessCard\VCard\Properties;
+use Remind\BusinessCard\VCard\Property\Property;
 
 /**
  * Description of Version
  */
-class Version {
+class Version implements Property {
 
     /**
      * The vCard property this class represents.
@@ -53,6 +54,10 @@ class Version {
      */
     public function __toString() {
         return self::NAME . '=' . $this->version;
+    }
+
+    public function getName() {
+        return self::NAME;
     }
 
     /**

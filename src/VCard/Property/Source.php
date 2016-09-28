@@ -3,11 +3,12 @@
 namespace Remind\BusinessCard\VCard\Property;
 
 use Remind\BusinessCard\VCard\Properties;
+use Remind\BusinessCard\VCard\Property\Property;
 
 /**
  * Description of Source
  */
-class Source {
+class Source implements Property {
 
     /**
      * @var string
@@ -34,6 +35,10 @@ class Source {
      */
     public function __toString() {
         return self::NAME . ':' . $this->uri;
+    }
+
+    public function getName() {
+        return self::NAME;
     }
 
     /**

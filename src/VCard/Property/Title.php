@@ -3,11 +3,12 @@
 namespace Remind\BusinessCard\VCard\Property;
 
 use Remind\BusinessCard\VCard\Properties;
+use Remind\BusinessCard\VCard\Property\Property;
 
 /**
  * Description of Title
  */
-class Title {
+class Title implements Property {
 
     /**
      * @var string
@@ -34,6 +35,10 @@ class Title {
      */
     public function __toString() {
         return self::NAME . ':' . $this->title;
+    }
+
+    public function getName() {
+        return self::NAME;
     }
 
     /**
