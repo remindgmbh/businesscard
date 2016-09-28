@@ -2,7 +2,7 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use Remind\BusinessCard\VCard\Parameter\Geo;
+use Remind\BusinessCard\VCard\Parameter\Geo as GeoParameter;
 use Remind\BusinessCard\VCard\Parameter\Pref;
 use Remind\BusinessCard\VCard\Parameter\Type;
 use Remind\BusinessCard\VCard\Properties;
@@ -231,7 +231,7 @@ class Adr implements Property {
 
     /**
      *
-     * @return Geo
+     * @return GeoParameter
      */
     public function getGeo() {
         return $this->geo;
@@ -319,9 +319,9 @@ class Adr implements Property {
 
     /**
      *
-     * @param Geo $geo
+     * @param GeoParameter $geo
      */
-    public function setGeo(Geo $geo) {
+    public function setGeo(GeoParameter $geo) {
         $this->geo = $geo;
     }
 }
