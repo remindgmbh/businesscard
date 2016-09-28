@@ -362,7 +362,7 @@ class Properties {
      */
     public static function getVersion40Properties() {
         return [
-            self::ADR, self::ANIVERSARY, self::BDAY, self::BEGIN,
+            self::ADR, self::ANNIVERSARY, self::BDAY, self::BEGIN,
             self::CATEGORIES, self::CLIENTPIDMAP, self::EMAIL, self::END,
             self::FBURL, self::FN, self::GENDER, self::GEO, self::IMPP,
             self::KEY, self::KIND, self::LANG, self::LOGO, self::MEMBER,
