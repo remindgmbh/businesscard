@@ -1,0 +1,47 @@
+################################################################################
+# REMIND Businesscard library                                                  #
+################################################################################
+
+DESCRIPTION
+--------------------------------------------------------------------------------
+This library provides a PHP library for generating business cards based on
+the vCard format in various formats.
+
+=== vCard ===
+This implementation is incomplete at the moment as not all fields and parameters
+of the vCard rfc6350 are fully implemented.
+
+Supports v2.1, 3.0 and 4.0 for all elements.
+
+=== xCard ===
+Implementation pending.
+
+=== jCard ===
+Implementation pending.
+
+=== hCard ===
+Implementation pending.
+
+HOW TO USE
+--------------------------------------------------------------------------------
+
+<?php
+
+use \Remind\BusinessCard\VCard;
+use \Remind\BusinessCard\Property\Version;
+
+$version = new Version();
+$version->setVersion(Version::VERSION_4_0);
+
+$vCard = new VCard($version);
+
+$n = new N();
+$n->setGivenName('John');
+$n->setFamilyName('Doe');
+
+$fn = new Fn('John Doe');
+
+$vCard->addProperty($n);
+$vCard->addProperty($fn);
+
+echo $vCard;

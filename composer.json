@@ -1,0 +1,39 @@
+{
+    "name": "remind/rmnd-businesscard",
+    "description": "rmnd_businesscard.",
+    "version": "0.1.0",
+    "type": "library",
+    "keywords": ["vcard", "vcf", "library"],
+    "license": ["GPL-3.0+"],
+    "authors": [
+        {
+            "name": "REMIND GmbH",
+            "email": "technik@remind.de",
+            "role": "Organisation"
+        },
+        {
+            "name": "Hauke Schulz",
+            "email": "h.schulz@remind.de",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "ramsey/uuid": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Remind\\BusinessCard\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.typo3.org/"
+        },
+        {
+            "type": "vcs",
+            "url": "git@bitbucket.org:remindgmbh/rmnd-businesscard.git"
+        }
+    ]
+}

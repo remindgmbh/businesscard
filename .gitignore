@@ -1,0 +1,10 @@
+### IDE ###
+nbproject/
+
+### Composer ###
+composer.phar
+composer.lock
+/vendor/
+
+### General ###
+*.log
