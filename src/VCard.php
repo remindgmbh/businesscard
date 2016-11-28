@@ -19,7 +19,7 @@ class VCard {
      * The line delimiter defined in RFC350 used for indiviudal lines.
      * @var string
      */
-    const CRLF = "\r\n";
+    const CRLF = "\n";
 
     /**
      * Holds all set properties for the vCard.
@@ -74,7 +74,7 @@ class VCard {
             $vcard .= $property . self::CRLF;
         }
 
-        $vcard .= $this->end . self::CRLF;
+        $vcard .= $this->end;
 
         return $vcard;
     }

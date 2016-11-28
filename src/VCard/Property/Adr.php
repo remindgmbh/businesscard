@@ -123,6 +123,7 @@ class Adr implements Property {
             . $this->type
             . $this->geo
             . $this->pref
+            . ':'
             . $this->getLabel()
             . $this->getAddress();
     }

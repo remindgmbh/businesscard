@@ -39,6 +39,7 @@ class Geo {
     function __construct(Version $version) {
         $this->latitude = '';
         $this->longitude = '';
+        $this->version = $version;
     }
 
     /**

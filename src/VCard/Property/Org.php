@@ -35,7 +35,7 @@ class Org implements Property {
      */
     public function __toString() {
         // ORG:ABC\, Inc.;North American Division;Marketing
-        return self::NAME . ';' . $this->name;
+        return self::NAME . ':' . $this->name;
     }
 
     public function getName() {

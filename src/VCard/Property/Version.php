@@ -53,7 +53,7 @@ class Version implements Property {
      * @return string
      */
     public function __toString() {
-        return self::NAME . '=' . $this->version;
+        return self::NAME . ':' . $this->version;
     }
 
     public function getName() {

@@ -43,7 +43,7 @@ class Pref {
      *
      */
     public function __toString() {
-        return self::NAME . '=' . $this->preference . ';';
+        return self::NAME . '=' . $this->preference;
     }
 
     /**
