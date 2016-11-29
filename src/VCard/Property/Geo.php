@@ -46,7 +46,7 @@ class Geo implements Property {
 
         $loc = implode(',', $this->latitude, $this->longitude);
 
-        return self::NAME . '="geo:' . $loc . '";';
+        return self::NAME . ':"geo:' . $loc;
     }
 
     public function getName() {

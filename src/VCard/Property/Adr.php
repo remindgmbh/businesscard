@@ -110,7 +110,7 @@ class Adr implements Property {
         $this->streetAddress = '';
 
         $this->type = null;
-        $this->pref = null;
+        $this->pref = new Pref();
         $this->label = '';
         $this->geo = null;
     }
@@ -119,13 +119,12 @@ class Adr implements Property {
      * Returns the object in its string representation.
      */
     public function __toString() {
-        return self::PROPERTY_NAME . ';'
-            . $this->type
-            . $this->geo
-            . $this->pref
-            . ':'
-            . $this->getLabel()
-            . $this->getAddress();
+        return implode(';', [
+            self::PROPERTY_NAME,
+            $this->type,
+            $this->geo,
+            $this->pref,
+        ]). ':' . $this->getLabel() . $this->getAddress();
     }
 
     /**

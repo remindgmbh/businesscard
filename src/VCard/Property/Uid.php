@@ -78,5 +78,6 @@ class Uid implements Property {
      */
     public function setUuid($uuid) {
         $this->uuid = $uuid;
+        $this->isFreetext = false;
     }
 }

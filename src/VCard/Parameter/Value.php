@@ -98,6 +98,10 @@ class Value {
         $this->type = $type;
     }
 
+    public function __toString() {
+        return self::NAME . '=' . $this->type;
+    }
+
     /**
      *
      * @return string

@@ -48,9 +48,9 @@ class Geo {
      */
     public function __toString() {
 
-        $loc = implode(',', $this->latitude, $this->longitude);
+        $loc = implode(',', [$this->latitude, $this->longitude]);
 
-        return self::NAME . '="geo:' . $loc . '";';
+        return self::NAME . ':geo:' . $loc;
     }
 
     /**
@@ -71,7 +71,7 @@ class Geo {
 
     /**
      *
-     * @param string
+     * @param string $latitude
      */
     function setLatitude($latitude) {
         $this->latitude = $latitude;

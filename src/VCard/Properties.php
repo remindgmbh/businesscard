@@ -344,7 +344,7 @@ class Properties {
      */
     public static function getVersion30Properties() {
         return [
-            self::ADR, self::AGENT, self::ANIVERSARY, self::BDAY, self::BEGIN,
+            self::ADR, self::AGENT, self::ANNIVERSARY, self::BDAY, self::BEGIN,
             self::CATEGORIES, self::CLASS, self::EMAIL, self::END, self::FN,
             self::GEO, self::IMPP, self::KEY, self::LABEL, self::LOGO,
             self::MAILER, self::N, self::NAME, self::NICKNAME, self::NOTE,

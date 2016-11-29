@@ -14,7 +14,7 @@ use Remind\BusinessCard\VCard\Property\Property;
 class Tel implements Property {
 
     /**
-     * @var
+     * @var string
      */
     const NAME = Properties::TEL;
 
@@ -62,8 +62,8 @@ class Tel implements Property {
         // TEL;VALUE=uri;PREF=1;TYPE="voice,home":tel:+1-555-555-5555;ext=5555
 
         return implode(';', [
-            self::NAME, $this->value, $this->pref, $this->type, $this->content
-        ]);
+            self::NAME, $this->value, $this->pref, $this->type
+        ]). ':' . $this->content;
     }
 
     public function getName() {
