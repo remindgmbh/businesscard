@@ -1,7 +1,6 @@
 {
     "name": "remind/rmnd-businesscard",
     "description": "rmnd_businesscard.",
-    "version": "0.3.0",
     "type": "library",
     "keywords": ["vcard", "vcf", "library"],
     "license": ["GPL-3.0+"],
@@ -18,14 +17,15 @@
         }
     ],
     "require": {
-        "ramsey/uuid": "*"
+        "ramsey/uuid": "^3.4.1"
     },
     "autoload": {
         "psr-4": {
             "Remind\\BusinessCard\\": "src/"
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "repositories": [
         {
             "type": "composer",
