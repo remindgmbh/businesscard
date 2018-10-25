@@ -3,17 +3,15 @@
     "description": "rmnd_businesscard.",
     "type": "library",
     "keywords": ["vcard", "vcf", "library"],
-    "license": ["GPL-3.0+"],
+    "license": ["GPL-3.0-or-later"],
     "authors": [
         {
             "name": "REMIND GmbH",
-            "email": "technik@remind.de",
-            "role": "Organisation"
+            "email": "technik@remind.de"
         },
         {
             "name": "Hauke Schulz",
-            "email": "h.schulz@remind.de",
-            "role": "Developer"
+            "email": "h.schulz@remind.de"
         }
     ],
     "require": {
@@ -24,16 +22,20 @@
             "Remind\\BusinessCard\\": "src/"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
+    "config": {
+        "optimize-autoloader": true,
+        "apcu-autoloader": true
+    },
+    "require": {
+        "php": "^7.1.0",
+        "typo3/cms-core": "^8.7.0"
+    },
     "repositories": [
-        {
-            "type": "composer",
-            "url": "https://composer.typo3.org/"
-        },
         {
             "type": "vcs",
             "url": "git@bitbucket.org:remindgmbh/rmnd-businesscard.git"
         }
-    ]
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable" : true
 }
