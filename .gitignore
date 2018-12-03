@@ -1,10 +1,13 @@
 ### IDE ###
 nbproject/
+.vscode/
+.idea/
 
 ### Composer ###
 composer.phar
-composer.lock
-/vendor/
 
 ### General ###
 *.log
+
+### Build ###
+.build/

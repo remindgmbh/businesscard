@@ -14,9 +14,6 @@
             "email": "h.schulz@remind.de"
         }
     ],
-    "require": {
-        "ramsey/uuid": "^3.4.1"
-    },
     "autoload": {
         "psr-4": {
             "Remind\\BusinessCard\\": "src/"
@@ -24,18 +21,27 @@
     },
     "config": {
         "optimize-autoloader": true,
-        "apcu-autoloader": true
+        "apcu-autoloader": true,
+        "vendor-dir": ".build/vendor",
+        "bin-dir": ".build/bin"
     },
     "require": {
         "php": "^7.1.0",
+        "ramsey/uuid": "^3.4.1",
         "typo3/cms-core": "^8.7.0"
     },
     "repositories": [
         {
-            "type": "vcs",
-            "url": "git@bitbucket.org:remindgmbh/rmnd-businesscard.git"
+            "type": "composer",
+            "url": "https://composer.remind.de/"
         }
     ],
     "minimum-stability": "dev",
-    "prefer-stable" : true
+    "prefer-stable" : true,
+    "extra": {
+        "typo3/cms": {
+            "cms-package-dir": "{$vendor-dir}/typo3/cms",
+            "web-dir": ".build/web"
+        }
+    }
 }
