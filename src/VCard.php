@@ -13,7 +13,8 @@ use Remind\BusinessCard\VCard\Property\Version;
  * @link https://tools.ietf.org/html/rfc6350
  * @link https://en.wikipedia.org/wiki/VCard
  */
-class VCard {
+class VCard
+{
 
     /**
      * The line delimiter defined in RFC350 used for indiviudal lines.
@@ -51,7 +52,8 @@ class VCard {
      *
      * @param Version $version
      */
-    public function __construct(Version $version) {
+    public function __construct(Version $version)
+    {
 
         $this->version = $version;
 
@@ -66,7 +68,8 @@ class VCard {
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         $vcard = $this->begin . self::CRLF;
         $vcard .= $this->version . self::CRLF;
 
@@ -84,7 +87,8 @@ class VCard {
      * @param Property $property
      * @return boolean
      */
-    public function addProperty(Property $property) {
+    public function addProperty(Property $property)
+    {
 
         /**/
         $isAllowed = $this->version->isPropertyAllowed($property);
@@ -101,7 +105,8 @@ class VCard {
      *
      * @return array
      */
-    public function getProperties() {
+    public function getProperties()
+    {
         return $this->properties;
     }
 
@@ -109,7 +114,8 @@ class VCard {
      *
      * @return Version
      */
-    public function getVersion() {
+    public function getVersion()
+    {
         return $this->version;
     }
 
@@ -117,7 +123,8 @@ class VCard {
      *
      * @param array $properties
      */
-    public function setProperties(array $properties) {
+    public function setProperties(array $properties)
+    {
         $this->properties = $properties;
     }
 
@@ -125,7 +132,8 @@ class VCard {
      *
      * @param Version $version
      */
-    public function setVersion(Version $version) {
+    public function setVersion(Version $version)
+    {
         $this->version = $version;
     }
 }

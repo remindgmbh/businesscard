@@ -8,7 +8,8 @@ use Remind\BusinessCard\VCard\Properties;
 /**
  * Description of Bday
  */
-class Bday implements Property {
+class Bday implements Property
+{
 
     const NAME = Properties::BDAY;
 
@@ -27,7 +28,8 @@ class Bday implements Property {
      *
      * @param \DateTime $date
      */
-    public function __construct(\DateTime $date) {
+    public function __construct(\DateTime $date)
+    {
         $this->date = $date;
     }
 
@@ -35,11 +37,13 @@ class Bday implements Property {
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         return self::NAME . ':' . $this->date->format(self::DATE_FORMAT);
     }
 
-    public function getName() {
+    public function getName()
+    {
         return self::NAME;
     }
 
@@ -47,7 +51,8 @@ class Bday implements Property {
      *
      * @return type
      */
-    public function getDate() {
+    public function getDate()
+    {
         return $this->date;
     }
 
@@ -55,7 +60,8 @@ class Bday implements Property {
      *
      * @param \DateTime $date
      */
-    public function setDate(\DateTime $date) {
+    public function setDate(\DateTime $date)
+    {
         $this->date = $date;
     }
 }

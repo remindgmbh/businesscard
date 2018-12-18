@@ -8,7 +8,8 @@ use Remind\BusinessCard\VCard\Property\Property;
 /**
  * Description of Title
  */
-class Title implements Property {
+class Title implements Property
+{
 
     /**
      * @var string
@@ -25,7 +26,8 @@ class Title implements Property {
      *
      * @param string $title
      */
-    public function __construct($title) {
+    public function __construct($title)
+    {
         $this->title = $title;
     }
 
@@ -33,11 +35,13 @@ class Title implements Property {
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         return self::NAME . ':' . $this->title;
     }
 
-    public function getName() {
+    public function getName()
+    {
         return self::NAME;
     }
 
@@ -45,7 +49,8 @@ class Title implements Property {
      *
      * @return string
      */
-    public function getTitle() {
+    public function getTitle()
+    {
         return $this->title;
     }
 
@@ -53,7 +58,8 @@ class Title implements Property {
      *
      * @param string $title
      */
-    public function setTitle($title) {
+    public function setTitle($title)
+    {
         $this->title = $title;
     }
 }

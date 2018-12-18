@@ -8,7 +8,8 @@ use Remind\BusinessCard\VCard\Property\Property;
 /**
  * Description of Source
  */
-class Source implements Property {
+class Source implements Property
+{
 
     /**
      * @var string
@@ -25,7 +26,8 @@ class Source implements Property {
      *
      * @param string $uri
      */
-    public function __construct($uri) {
+    public function __construct($uri)
+    {
         $this->uri = $uri;
     }
 
@@ -33,11 +35,13 @@ class Source implements Property {
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         return self::NAME . ':' . $this->uri;
     }
 
-    public function getName() {
+    public function getName()
+    {
         return self::NAME;
     }
 
@@ -45,7 +49,8 @@ class Source implements Property {
      *
      * @return string
      */
-    public function getUri() {
+    public function getUri()
+    {
         return $this->uri;
     }
 
@@ -53,7 +58,8 @@ class Source implements Property {
      *
      * @param string $uri
      */
-    public function setUri($uri) {
+    public function setUri($uri)
+    {
         $this->uri = $uri;
     }
 }

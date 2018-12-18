@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="rmnd-merchants" default="build" basedir=".">
+
+    <!-- Set basedir to current dir -->
+    <property name="basedir" value="."/>
+
+    <!-- Set name of php executable -->
+    <property name="php" value="php"/>
+
+    <!-- Property will only be set on windows -->
+    <condition property="is_windows">
+        <os family="windows"/>
+    </condition>
+
+    <!-- Property will only be set on unix -->
+    <condition property="is_unix">
+        <os family="unix"/>
+    </condition>
+
+    <!-- Set name of npm executable based on OS -->
+    <condition property="npm" value="npm" else="npm.cmd">
+        <os family="unix"/>
+    </condition>
+
+    <!-- Set path to and name of composer.phar -->
+    <property name="composer" value="${basedir}/composer.phar"/>
+
+    <!-- Set names of tool binaries based on OS -->
+    <condition property="pdepend" value=".build/bin/pdepend" else=".build/bin/pdepend.bat">
+        <os family="unix"/>
+    </condition>
+    <condition property="phpcpd" value=".build/bin/phpcpd" else=".build/bin/phpcpd.bat">
+        <os family="unix"/>
+    </condition>
+    <condition property="phpcs" value=".build/bin/phpcs" else=".build/bin/phpcs.bat">
+        <os family="unix"/>
+    </condition>
+    <condition property="phploc" value=".build/bin/phploc" else=".build/bin/phploc.bat">
+        <os family="unix"/>
+    </condition>
+    <condition property="phpmd" value=".build/bin/phpmd" else=".build/bin/phpmd.bat">
+        <os family="unix"/>
+    </condition>
+    <condition property="phpunit" value=".build/bin/phpunit" else=".build/bin/phpunit.bat">
+        <os family="unix"/>
+    </condition>
+
+    <target
+        name="composer-check"
+        description="Test if composer.phar exists">
+
+        <available file="${composer}" property="composer.present"/>
+    </target>
+
+    <target
+        name="composer-download"
+        depends="composer-check"
+        unless="composer.present"
+        description="Download composer.phar if not present">
+
+        <get src="https://getcomposer.org/composer.phar" dest="${composer}"/>
+    </target>
+
+    <target
+        name="composer-install-deps"
+        depends="composer-download"
+        description="Install composer dependencies with as little output as possible">
+
+        <exec executable="${php}">
+            <arg value="${composer}"/>
+            <arg value="install"/>
+            <arg value="-q"/>
+        </exec>
+    </target>
+
+    <target
+        name="init-deps"
+        unless="init-deps.done"
+        depends="composer-install-deps"
+        description="Run targets that install dependencies">
+
+        <property name="init-deps.done" value="true"/>
+    </target>
+
+    <target
+        name="build"
+        depends="full-build,full-build-ci"
+        description="Run either one of the targets based on the OS"/>
+
+    <target
+        name="full-build"
+        if="is_windows"
+        depends="prepare,init-deps,static-analysis,phpunit,-check-failure"
+        description="Windows build target; Human readable output"/>
+
+    <target
+        name="full-build-ci"
+        if="is_unix"
+        depends="prepare,init-deps,static-analysis-ci,phpunit-ci,-check-failure"
+        description="Unix build target; Jenkins readable output"/>
+
+    <target
+        name="full-build-parallel-ci"
+        if="is_unix"
+        depends="prepare,init-deps,static-analysis-parallel-ci,phpunit,-check-failure"
+        description="Performs static analysis (executing the tools in parallel), runs the tests, and generates project documentation"/>
+
+    <target
+        name="static-analysis"
+        if="is_windows"
+        depends="prepare,init-deps,phploc,pdepend,phpmd,phpcs,phpcpd"
+        description="Performs static analysis with human readable output"/>
+
+    <target
+        name="static-analysis-ci"
+        if="is_unix"
+        depends="prepare,init-deps,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci"
+        description="Performs static analysis with CI readable output"/>
+
+    <!-- Adjust the threadCount attribute's value to the number of CPUs -->
+    <target
+        name="static-analysis-parallel-ci"
+        if="is_unix"
+        description="Performs static analysis (executing the tools in parallel)">
+
+        <parallel threadCount="2">
+            <sequential>
+                <antcall target="pdepend"/>
+                <antcall target="phpmd-ci"/>
+            </sequential>
+            <antcall target="lint"/>
+            <antcall target="phpcpd-ci"/>
+            <antcall target="phpcs-ci"/>
+            <antcall target="phploc-ci"/>
+        </parallel>
+    </target>
+
+    <target
+        name="clean"
+        unless="clean.done"
+        description="Cleanup build artifacts">
+
+        <delete dir="${basedir}/.build/coverage"/>
+        <delete dir="${basedir}/.build/logs"/>
+        <delete dir="${basedir}/.build/pdepend"/>
+
+        <property name="clean.done" value="true"/>
+    </target>
+
+    <target
+        name="prepare"
+        unless="prepare.done"
+        depends="clean"
+        description="Prepare for build">
+
+        <mkdir dir="${basedir}/.build/coverage"/>
+        <mkdir dir="${basedir}/.build/logs"/>
+        <mkdir dir="${basedir}/.build/pdepend"/>
+
+        <property name="prepare.done" value="true"/>
+    </target>
+
+    <target
+        name="lint"
+        unless="lint.done"
+        description="Perform syntax check of sourcecode files">
+
+        <apply executable="${php}" taskname="lint">
+            <arg value="-l" />
+
+            <fileset dir="${basedir}/src">
+                <include name="**/*.php" />
+                <modified />
+            </fileset>
+
+            <fileset dir="${basedir}/Tests">
+                <include name="**/*.php" />
+                <modified />
+            </fileset>
+        </apply>
+
+        <property name="lint.done" value="true"/>
+    </target>
+
+    <target
+        name="phploc"
+        unless="phploc.done"
+        depends="prepare"
+        description="Measure project size using PHPLOC and print human readable output. Intended for usage on the command line.">
+
+        <exec executable="${phploc}" taskname="phploc">
+            <arg value="--count-tests" />
+            <arg path="${basedir}/src" />
+            <arg path="${basedir}/Tests" />
+        </exec>
+
+        <property name="phploc.done" value="true"/>
+    </target>
+
+    <target
+        name="phploc-ci"
+        unless="phploc.done"
+        depends="prepare"
+        description="Measure project size using PHPLOC and log result in CSV and XML format. Intended for usage within a continuous integration environment.">
+
+        <exec executable="${phploc}" taskname="phploc">
+            <arg value="--count-tests"/>
+            <arg value="--log-csv"/>
+            <arg path="${basedir}/.build/logs/phploc.csv"/>
+            <arg value="--log-xml"/>
+            <arg path="${basedir}/.build/logs/phploc.xml"/>
+            <arg path="${basedir}/src"/>
+            <arg path="${basedir}/Tests"/>
+        </exec>
+
+        <property name="phploc.done" value="true"/>
+    </target>
+
+    <target
+        name="pdepend"
+        unless="pdepend.done"
+        depends="prepare"
+        description="Calculate software metrics using PHP_Depend and log result in XML format. Intended for usage within a continuous integration environment.">
+
+        <exec executable="${pdepend}" taskname="pdepend">
+            <arg value="--jdepend-xml=${basedir}/.build/logs/jdepend.xml" />
+            <arg value="--jdepend-chart=${basedir}/.build/pdepend/dependencies.svg" />
+            <arg value="--overview-pyramid=${basedir}/.build/pdepend/overview-pyramid.svg" />
+            <arg path="${basedir}/src" />
+        </exec>
+
+        <property name="pdepend.done" value="true"/>
+    </target>
+
+    <target
+        name="phpmd"
+        unless="phpmd.done"
+        description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
+
+        <exec executable="${phpmd}" taskname="phpmd">
+            <arg path="${basedir}/src" />
+            <arg value="text" />
+            <arg path="${basedir}/.build/phpmd.xml" />
+        </exec>
+
+        <property name="phpmd.done" value="true"/>
+    </target>
+
+    <target
+        name="phpmd-ci"
+        unless="phpmd.done"
+        depends="prepare"
+        description="Perform project mess detection using PHPMD and log result in XML format. Intended for usage within a continuous integration environment.">
+
+        <exec executable="${phpmd}" taskname="phpmd">
+            <arg path="${basedir}/src" />
+            <arg value="xml" />
+            <arg path="${basedir}/.build/phpmd.xml" />
+            <arg value="--reportfile" />
+            <arg path="${basedir}/.build/logs/pmd.xml" />
+        </exec>
+
+        <property name="phpmd.done" value="true"/>
+    </target>
+
+    <target
+        name="phpcs"
+        unless="phpcs.done"
+        description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
+
+        <exec executable="${phpcs}" taskname="phpcs">
+            <arg value="--standard=PSR2"/>
+            <arg value="--extensions=php"/>
+            <arg value="--ignore=autoload.php"/>
+            <arg path="${basedir}/src"/>
+            <arg path="${basedir}/Tests"/>
+        </exec>
+
+        <property name="phpcs.done" value="true"/>
+    </target>
+
+    <target
+        name="phpcs-ci"
+        unless="phpcs.done"
+        depends="prepare"
+        description="Find coding standard violations using PHP_CodeSniffer and log result in XML format. Intended for usage within a continuous integration environment.">
+
+        <exec executable="${phpcs}" taskname="phpcs">
+            <arg value="--report=checkstyle" />
+            <arg value="--report-file=${basedir}/.build/logs/phpcs-results.xml" />
+            <arg value="--standard=PSR2" />
+            <arg value="--extensions=php" />
+            <arg value="--ignore=autoload.php" />
+            <arg path="${basedir}/src" />
+            <arg path="${basedir}/Tests" />
+        </exec>
+
+        <property name="phpcs.done" value="true"/>
+    </target>
+
+    <target
+        name="phpcpd"
+        unless="phpcpd.done"
+        description="Find duplicate code using PHPCPD and print human readable output. Intended for usage on the command line before committing.">
+
+        <exec executable="${phpcpd}" taskname="phpcpd">
+            <arg path="${basedir}/src" />
+        </exec>
+
+        <property name="phpcpd.done" value="true"/>
+    </target>
+
+    <target
+        name="phpcpd-ci"
+        unless="phpcpd.done"
+        depends="prepare"
+        description="Find duplicate code using PHPCPD and log result in XML format. Intended for usage within a continuous integration environment.">
+
+        <exec executable="${phpcpd}" taskname="phpcpd">
+            <arg value="--log-pmd" />
+            <arg path="${basedir}/.build/logs/pmd-cpd.xml" />
+            <arg path="${basedir}/src" />
+        </exec>
+
+        <property name="phpcpd.done" value="true"/>
+    </target>
+
+    <target
+        name="phpunit"
+        unless="phpunit.done"
+        depends="prepare"
+        description="Run unit tests with PHPUnit">
+
+        <exec executable="${phpunit}" resultproperty="result.phpunit" taskname="phpunit">
+            <arg value="--bootstrap"/>
+            <arg path="${basedir}/.build/vendor/autoload.php"/>
+
+            <arg value="--testdox"/>
+
+            <arg value="--coverage-html"/>
+            <arg path="${basedir}/.build/coverage"/>
+
+            <arg value="--whitelist"/>
+            <arg path="${basedir}/src"/>
+
+            <arg path="${basedir}/Tests/Unit"/>
+        </exec>
+
+        <property name="phpunit.done" value="true"/>
+    </target>
+
+    <target
+        name="phpunit-ci"
+        unless="phpunit.done"
+        depends="prepare"
+        description="Run unit tests with PHPUnit">
+
+        <exec executable="${phpunit}" resultproperty="result.phpunit" taskname="phpunit">
+            <arg value="--bootstrap"/>
+            <arg path="${basedir}/.build/vendor/autoload.php"/>
+
+            <arg value="--testdox"/>
+
+            <arg value="--log-junit"/>
+            <arg path="${basedir}/.build/logs/unitreport.xml"/>
+
+            <arg value="--coverage-html"/>
+            <arg path="${basedir}/.build/coverage"/>
+
+            <arg value="--coverage-clover"/>
+            <arg path="${basedir}/.build/coverage/coverage.xml"/>
+
+            <arg value="--whitelist"/>
+            <arg path="${basedir}/src"/>
+
+            <arg path="${basedir}/Tests/Unit"/>
+        </exec>
+
+        <property name="phpunit.done" value="true"/>
+    </target>
+
+    <target name="-check-failure">
+        <fail message="PHPUnit did not finish successfully">
+            <condition>
+                <not>
+                    <equals arg1="${result.phpunit}" arg2="0"/>
+                </not>
+            </condition>
+        </fail>
+    </target>
+
+</project>

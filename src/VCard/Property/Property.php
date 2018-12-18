@@ -5,7 +5,8 @@ namespace Remind\BusinessCard\VCard\Property;
 /**
  *
  */
-interface Property {
+interface Property
+{
 
     /**
      * @return string

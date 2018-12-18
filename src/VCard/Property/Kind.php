@@ -10,7 +10,8 @@ use Remind\BusinessCard\VCard\Property\Property;
  *
  * @link https://tools.ietf.org/html/rfc6350#section-6.1.4
  */
-class Kind implements Property {
+class Kind implements Property
+{
 
     /**
      * Name of the vCard property this class represents.
@@ -68,7 +69,8 @@ class Kind implements Property {
     /**
      *
      */
-    public function __construct($type) {
+    public function __construct($type)
+    {
 
         /**/
         $this->type = self::TYPE_INDIVIDUAL;
@@ -80,11 +82,13 @@ class Kind implements Property {
     /**
      *
      */
-    public function __toString() {
+    public function __toString()
+    {
         return self::NAME . ':' . $this->type;
     }
 
-    public function getName() {
+    public function getName()
+    {
         return self::NAME;
     }
 
@@ -93,7 +97,8 @@ class Kind implements Property {
      * @param string $type
      * @return boolean
      */
-    public function setType($type) {
+    public function setType($type)
+    {
 
         /* Store all versions into an array */
         $types = [
@@ -106,7 +111,6 @@ class Kind implements Property {
 
         /* Search the versions for the given string */
         if (array_search($type, $types) !== false) {
-
             /* Version string is valid, so it is set */
             $this->type = $type;
 
@@ -121,7 +125,8 @@ class Kind implements Property {
      *
      * @return string
      */
-    public function getType() {
+    public function getType()
+    {
         return $this->type;
     }
 }

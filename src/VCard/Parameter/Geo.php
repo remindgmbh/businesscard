@@ -8,7 +8,8 @@ use Remind\BusinessCard\VCard\Property\Version;
 /**
  * Description of Geo
  */
-class Geo {
+class Geo
+{
 
     /**
      * @var string
@@ -36,7 +37,8 @@ class Geo {
     /**
      *
      */
-    function __construct(Version $version) {
+    public function __construct(Version $version)
+    {
         $this->latitude = '';
         $this->longitude = '';
         $this->version = $version;
@@ -46,7 +48,8 @@ class Geo {
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
 
         $loc = implode(',', [$this->latitude, $this->longitude]);
 
@@ -57,7 +60,8 @@ class Geo {
      *
      * @return string
      */
-    public function getLatitude() {
+    public function getLatitude()
+    {
         return $this->latitude;
     }
 
@@ -65,7 +69,8 @@ class Geo {
      *
      * @return string
      */
-    public function getLongitude() {
+    public function getLongitude()
+    {
         return $this->longitude;
     }
 
@@ -73,7 +78,8 @@ class Geo {
      *
      * @param string $latitude
      */
-    function setLatitude($latitude) {
+    public function setLatitude($latitude)
+    {
         $this->latitude = $latitude;
     }
 
@@ -81,7 +87,8 @@ class Geo {
      *
      * @param string $longitude
      */
-    function setLongitude($longitude) {
+    public function setLongitude($longitude)
+    {
         $this->longitude = $longitude;
     }
 }

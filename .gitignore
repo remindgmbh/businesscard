@@ -8,6 +8,12 @@ composer.phar
 
 ### General ###
 *.log
+cache.properties
 
-### Build ###
-.build/
+### CI ###
+.build/bin/
+.build/vendor/
+.build/web/
+.build/logs/
+.build/coverage/
+.build/pdepend/

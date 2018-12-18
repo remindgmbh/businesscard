@@ -8,7 +8,8 @@ use Remind\BusinessCard\VCard\Property\Property;
 /**
  * Description of N
  */
-class N implements Property {
+class N implements Property
+{
 
     /**
      * @var string
@@ -48,7 +49,8 @@ class N implements Property {
     /**
      *
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->familyName = '';
         $this->givenName = '';
         $this->additionalName = '';
@@ -60,7 +62,8 @@ class N implements Property {
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         return self::NAME . ':' . implode(';', [
             $this->familyName,
             $this->givenName,
@@ -70,7 +73,8 @@ class N implements Property {
         ]);
     }
 
-    public function getName() {
+    public function getName()
+    {
         return self::NAME;
     }
 
@@ -78,7 +82,8 @@ class N implements Property {
      *
      * @return string
      */
-    public function getFamilyName() {
+    public function getFamilyName()
+    {
         return $this->familyName;
     }
 
@@ -86,7 +91,8 @@ class N implements Property {
      *
      * @return string
      */
-    public function getGivenName() {
+    public function getGivenName()
+    {
         return $this->givenName;
     }
 
@@ -94,7 +100,8 @@ class N implements Property {
      *
      * @return string
      */
-    public function getAdditionalName() {
+    public function getAdditionalName()
+    {
         return $this->additionalName;
     }
 
@@ -102,7 +109,8 @@ class N implements Property {
      *
      * @return type
      */
-    public function getHonorificPrefixes() {
+    public function getHonorificPrefixes()
+    {
         return $this->honorificPrefixes;
     }
 
@@ -110,7 +118,8 @@ class N implements Property {
      *
      * @return string
      */
-    public function getHonorificSuffixes() {
+    public function getHonorificSuffixes()
+    {
         return $this->honorificSuffixes;
     }
 
@@ -118,7 +127,8 @@ class N implements Property {
      *
      * @param string $familyName
      */
-    public function setFamilyName($familyName) {
+    public function setFamilyName($familyName)
+    {
         $this->familyName = $familyName;
     }
 
@@ -126,7 +136,8 @@ class N implements Property {
      *
      * @param string $givenName
      */
-    public function setGivenName($givenName) {
+    public function setGivenName($givenName)
+    {
         $this->givenName = $givenName;
     }
 
@@ -134,7 +145,8 @@ class N implements Property {
      *
      * @param string $additionalName
      */
-    public function setAdditionalName($additionalName) {
+    public function setAdditionalName($additionalName)
+    {
         $this->additionalName = $additionalName;
     }
 
@@ -142,7 +154,8 @@ class N implements Property {
      *
      * @param string $honorificPrefixes
      */
-    public function setHonorificPrefixes($honorificPrefixes) {
+    public function setHonorificPrefixes($honorificPrefixes)
+    {
         $this->honorificPrefixes = $honorificPrefixes;
     }
 
@@ -150,7 +163,8 @@ class N implements Property {
      *
      * @param string $honorificSuffixes
      */
-    public function setHonorificSuffixes($honorificSuffixes) {
+    public function setHonorificSuffixes($honorificSuffixes)
+    {
         $this->honorificSuffixes = $honorificSuffixes;
     }
 }

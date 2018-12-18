@@ -11,7 +11,8 @@ use Remind\BusinessCard\VCard\Property\Property;
 /**
  * Description of Tel
  */
-class Tel implements Property {
+class Tel implements Property
+{
 
     /**
      * @var string
@@ -47,7 +48,8 @@ class Tel implements Property {
      * @param TypeTelephone $type
      * @param string $content
      */
-    public function __construct(TypeTelephone $type, $content) {
+    public function __construct(TypeTelephone $type, $content)
+    {
         $this->type = $type;
         $this->content = $content;
         $this->pref = new Pref(Pref::HIGHEST);
@@ -58,7 +60,8 @@ class Tel implements Property {
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         // TEL;VALUE=uri;PREF=1;TYPE="voice,home":tel:+1-555-555-5555;ext=5555
 
         return implode(';', [
@@ -66,7 +69,8 @@ class Tel implements Property {
         ]). ':' . $this->content;
     }
 
-    public function getName() {
+    public function getName()
+    {
         return self::NAME;
     }
 
@@ -74,7 +78,8 @@ class Tel implements Property {
      *
      * @return Value
      */
-    public function getValue() {
+    public function getValue()
+    {
         return $this->value;
     }
 
@@ -82,7 +87,8 @@ class Tel implements Property {
      *
      * @return Pref
      */
-    public function getPref() {
+    public function getPref()
+    {
         return $this->pref;
     }
 
@@ -90,7 +96,8 @@ class Tel implements Property {
      *
      * @return string
      */
-    public function getContent() {
+    public function getContent()
+    {
         return $this->content;
     }
 
@@ -98,7 +105,8 @@ class Tel implements Property {
      *
      * @return TypeTelephone
      */
-    public function getType() {
+    public function getType()
+    {
         return $this->type;
     }
 
@@ -106,7 +114,8 @@ class Tel implements Property {
      *
      * @param Value $value
      */
-    public function setValue(Value $value) {
+    public function setValue(Value $value)
+    {
         $this->value = $value;
     }
 
@@ -114,7 +123,8 @@ class Tel implements Property {
      *
      * @param Pref $pref
      */
-    public function setPref(Pref $pref) {
+    public function setPref(Pref $pref)
+    {
         $this->pref = $pref;
     }
 
@@ -122,7 +132,8 @@ class Tel implements Property {
      *
      * @param string $content
      */
-    public function setContent($content) {
+    public function setContent($content)
+    {
         $this->content = $content;
     }
 
@@ -130,7 +141,8 @@ class Tel implements Property {
      *
      * @param TypeTelephone $type
      */
-    public function setType(TypeTelephone $type) {
+    public function setType(TypeTelephone $type)
+    {
         $this->type = $type;
     }
 }

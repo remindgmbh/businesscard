@@ -6,7 +6,8 @@ namespace Remind\BusinessCard\VCard;
  * This class contains constants that define all vCard properties as well as
  * some validation functions.
  */
-class Properties {
+class Properties
+{
 
     /**
      * A structured representation of the physical delivery address
@@ -325,7 +326,8 @@ class Properties {
      *
      * @return array All properties for 2.1 vCard files
      */
-    public static function getVersion21Properties() {
+    public static function getVersion21Properties()
+    {
         return [
             self::ADR, self::AGENT, self::BDAY, self::BEGIN, self::CATEGORIES,
             self::EMAIL, self::END, self::FN, self::GEO, self::KEY, self::LABEL,
@@ -342,7 +344,8 @@ class Properties {
      *
      * @return array All properties for 3.0 vCard files
      */
-    public static function getVersion30Properties() {
+    public static function getVersion30Properties()
+    {
         return [
             self::ADR, self::AGENT, self::ANNIVERSARY, self::BDAY, self::BEGIN,
             self::CATEGORIES, self::CLASS, self::EMAIL, self::END, self::FN,
@@ -360,7 +363,8 @@ class Properties {
      *
      * @return array All properties for 4.0 vCard files
      */
-    public static function getVersion40Properties() {
+    public static function getVersion40Properties()
+    {
         return [
             self::ADR, self::ANNIVERSARY, self::BDAY, self::BEGIN,
             self::CATEGORIES, self::CLIENTPIDMAP, self::EMAIL, self::END,
@@ -373,7 +377,8 @@ class Properties {
         ];
     }
 
-    public static function getRequiredProperties() {
+    public static function getRequiredProperties()
+    {
         return [ self::BEGIN, self::END, self::VERSION ];
     }
 
@@ -381,7 +386,8 @@ class Properties {
      *
      * @return type
      */
-    public static function getVersion21RequiredProperties() {
+    public static function getVersion21RequiredProperties()
+    {
         return [ self::BEGIN, self::END, self::N, self::VERSION ];
     }
 
@@ -389,7 +395,8 @@ class Properties {
      *
      * @return type
      */
-    public static function getVersion30RequiredProperties() {
+    public static function getVersion30RequiredProperties()
+    {
         return [ self::BEGIN, self::END, self::FN, self::N, self::VERSION ];
     }
 
@@ -397,7 +404,8 @@ class Properties {
      *
      * @return type
      */
-    public static function getVersion40RequiredProperties() {
+    public static function getVersion40RequiredProperties()
+    {
         return [ self::BEGIN, self::END, self::FN, self::VERSION ];
     }
 
@@ -406,7 +414,8 @@ class Properties {
      * @param type $value
      * @return type
      */
-    public static function escapeValue($value) {
+    public static function escapeValue($value)
+    {
         return str_replace([',', ';', '\\'], ['\\,', '\\;', '\\\\'], $value);
     }
 }

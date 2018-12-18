@@ -10,7 +10,8 @@ use Remind\BusinessCard\VCard\Parameter\Geo as GeoParameter;
 /**
  * Description of Geo
  */
-class Geo implements Property {
+class Geo implements Property
+{
 
     /**
      * @var string
@@ -33,7 +34,8 @@ class Geo implements Property {
      *
      * @param Version $version
      */
-    public function __construct(Version $version) {
+    public function __construct(Version $version)
+    {
         $this->version = $version;
         $this->geo = new GeoParameter($version);
     }
@@ -42,14 +44,16 @@ class Geo implements Property {
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
 
         $loc = implode(',', $this->latitude, $this->longitude);
 
         return self::NAME . ':"geo:' . $loc;
     }
 
-    public function getName() {
+    public function getName()
+    {
         return self::NAME;
     }
 
@@ -57,7 +61,8 @@ class Geo implements Property {
      *
      * @return GeoParameter
      */
-    function getGeo() {
+    public function getGeo()
+    {
         return $this->geo;
     }
 
@@ -65,7 +70,8 @@ class Geo implements Property {
      *
      * @return Version
      */
-    function getVersion() {
+    public function getVersion()
+    {
         return $this->version;
     }
 
@@ -73,7 +79,8 @@ class Geo implements Property {
      *
      * @param GeoParameter $geo
      */
-    function setGeo(GeoParameter $geo) {
+    public function setGeo(GeoParameter $geo)
+    {
         $this->geo = $geo;
     }
 
@@ -81,7 +88,8 @@ class Geo implements Property {
      *
      * @param Version $version
      */
-    function setVersion(Version $version) {
+    public function setVersion(Version $version)
+    {
         $this->version = $version;
     }
 }

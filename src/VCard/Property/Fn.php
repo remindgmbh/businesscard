@@ -8,7 +8,8 @@ use Remind\BusinessCard\VCard\Properties;
 /**
  * Description of Fn
  */
-class Fn implements Property {
+class Fn implements Property
+{
 
     /**
      * @var string
@@ -25,7 +26,8 @@ class Fn implements Property {
      *
      * @param string $identifier
      */
-    public function __construct($identifier) {
+    public function __construct($identifier)
+    {
         $this->identifier = $identifier;
     }
 
@@ -33,11 +35,13 @@ class Fn implements Property {
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         return self::NAME . ':' . $this->identifier;
     }
 
-    public function getName() {
+    public function getName()
+    {
         return self::NAME;
     }
 
@@ -45,7 +49,8 @@ class Fn implements Property {
      *
      * @return string
      */
-    public function getIdentifier() {
+    public function getIdentifier()
+    {
         return $this->identifier;
     }
 
@@ -53,7 +58,8 @@ class Fn implements Property {
      *
      * @param string $identifier
      */
-    public function setIdentifier($identifier) {
+    public function setIdentifier($identifier)
+    {
         $this->identifier = $identifier;
     }
 }

@@ -13,7 +13,8 @@ use Remind\BusinessCard\VCard\Property\Property;
  *
  * @link https://tools.ietf.org/html/rfc6350#section-6.3.1
  */
-class Adr implements Property {
+class Adr implements Property
+{
 
     /**
      * Property name this class represents.
@@ -100,7 +101,8 @@ class Adr implements Property {
     /**
      * Initializes an Adr object with no data.
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->countryName = '';
         $this->extendedAddress = '';
         $this->locality = '';
@@ -118,7 +120,8 @@ class Adr implements Property {
     /**
      * Returns the object in its string representation.
      */
-    public function __toString() {
+    public function __toString()
+    {
         return implode(';', [
             self::PROPERTY_NAME,
             $this->type,
@@ -131,7 +134,8 @@ class Adr implements Property {
      *
      * @return string
      */
-    protected function getAddress() {
+    protected function getAddress()
+    {
         return $this->postOfficeBox . ';'
             . $this->extendedAddress . ';'
             . $this->streetAddress . ';'
@@ -145,7 +149,8 @@ class Adr implements Property {
      *
      * @return string
      */
-    public function getName() {
+    public function getName()
+    {
         return self::PROPERTY_NAME;
     }
 
@@ -153,7 +158,8 @@ class Adr implements Property {
      *
      * @return string
      */
-    public function getPostOfficeBox() {
+    public function getPostOfficeBox()
+    {
         return $this->postOfficeBox;
     }
 
@@ -161,7 +167,8 @@ class Adr implements Property {
      *
      * @return string
      */
-    public function getExtendedAddress() {
+    public function getExtendedAddress()
+    {
         return $this->extendedAddress;
     }
 
@@ -169,7 +176,8 @@ class Adr implements Property {
      *
      * @return string
      */
-    public function getStreetAddress() {
+    public function getStreetAddress()
+    {
         return $this->streetAddress;
     }
 
@@ -177,7 +185,8 @@ class Adr implements Property {
      *
      * @return string
      */
-    public function getLocality() {
+    public function getLocality()
+    {
         return $this->locality;
     }
 
@@ -185,7 +194,8 @@ class Adr implements Property {
      *
      * @return string
      */
-    public function getRegion() {
+    public function getRegion()
+    {
         return $this->region;
     }
 
@@ -193,7 +203,8 @@ class Adr implements Property {
      *
      * @return string
      */
-    public function getPostalCode() {
+    public function getPostalCode()
+    {
         return $this->postalCode;
     }
 
@@ -201,7 +212,8 @@ class Adr implements Property {
      *
      * @return string
      */
-    public function getCountryName() {
+    public function getCountryName()
+    {
         return $this->countryName;
     }
 
@@ -209,7 +221,8 @@ class Adr implements Property {
      *
      * @return Type
      */
-    public function getType() {
+    public function getType()
+    {
         return $this->type;
     }
 
@@ -217,7 +230,8 @@ class Adr implements Property {
      *
      * @return Pref
      */
-    public function getPref() {
+    public function getPref()
+    {
         return $this->pref;
     }
 
@@ -225,7 +239,8 @@ class Adr implements Property {
      *
      * @return string
      */
-    public function getLabel() {
+    public function getLabel()
+    {
         return $this->label;
     }
 
@@ -233,7 +248,8 @@ class Adr implements Property {
      *
      * @return GeoParameter
      */
-    public function getGeo() {
+    public function getGeo()
+    {
         return $this->geo;
     }
 
@@ -241,7 +257,8 @@ class Adr implements Property {
      *
      * @param string $postOfficeBox
      */
-    public function setPostOfficeBox($postOfficeBox) {
+    public function setPostOfficeBox($postOfficeBox)
+    {
         $this->postOfficeBox = $postOfficeBox;
     }
 
@@ -249,7 +266,8 @@ class Adr implements Property {
      *
      * @param string $extendedAddress
      */
-    public function setExtendedAddress($extendedAddress) {
+    public function setExtendedAddress($extendedAddress)
+    {
         $this->extendedAddress = $extendedAddress;
     }
 
@@ -257,7 +275,8 @@ class Adr implements Property {
      *
      * @param string $streetAddress
      */
-    public function setStreetAddress($streetAddress) {
+    public function setStreetAddress($streetAddress)
+    {
         $this->streetAddress = $streetAddress;
     }
 
@@ -265,7 +284,8 @@ class Adr implements Property {
      *
      * @param string $locality
      */
-    public function setLocality($locality) {
+    public function setLocality($locality)
+    {
         $this->locality = $locality;
     }
 
@@ -273,7 +293,8 @@ class Adr implements Property {
      *
      * @param string $region
      */
-    public function setRegion($region) {
+    public function setRegion($region)
+    {
         $this->region = $region;
     }
 
@@ -281,7 +302,8 @@ class Adr implements Property {
      *
      * @param string $postalCode
      */
-    public function setPostalCode($postalCode) {
+    public function setPostalCode($postalCode)
+    {
         $this->postalCode = $postalCode;
     }
 
@@ -289,7 +311,8 @@ class Adr implements Property {
      *
      * @param string $countryName
      */
-    public function setCountryName($countryName) {
+    public function setCountryName($countryName)
+    {
         $this->countryName = $countryName;
     }
 
@@ -297,7 +320,8 @@ class Adr implements Property {
      *
      * @param Type $type
      */
-    public function setType(Type $type) {
+    public function setType(Type $type)
+    {
         $this->type = $type;
     }
 
@@ -305,7 +329,8 @@ class Adr implements Property {
      *
      * @param Pref $pref
      */
-    public function setPref(Pref $pref) {
+    public function setPref(Pref $pref)
+    {
         $this->pref = $pref;
     }
 
@@ -313,7 +338,8 @@ class Adr implements Property {
      *
      * @param string $label
      */
-    public function setLabel($label) {
+    public function setLabel($label)
+    {
         $this->label = $label;
     }
 
@@ -321,7 +347,8 @@ class Adr implements Property {
      *
      * @param GeoParameter $geo
      */
-    public function setGeo(GeoParameter $geo) {
+    public function setGeo(GeoParameter $geo)
+    {
         $this->geo = $geo;
     }
 }

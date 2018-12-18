@@ -10,7 +10,8 @@ use Remind\BusinessCard\VCard\Properties;
 /**
  * Description of Email
  */
-class Email implements Property {
+class Email implements Property
+{
 
     /**
      * @var string
@@ -40,20 +41,23 @@ class Email implements Property {
      * @param Type $type
      * @param string $value
      */
-    public function __construct(Type $type, $value) {
+    public function __construct(Type $type, $value)
+    {
         $this->type = $type;
         $this->value = $value;
         $this->pref = new Pref(Pref::HIGHEST);
     }
 
-    public function getName() {
+    public function getName()
+    {
         return self::NAME;
     }
 
     /**
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         return implode(';', [
             self::NAME, $this->type, $this->pref
         ]) . ':' . $this->value;
@@ -63,7 +67,8 @@ class Email implements Property {
      *
      * @return Type
      */
-    public function getType() {
+    public function getType()
+    {
         return $this->type;
     }
 
@@ -71,7 +76,8 @@ class Email implements Property {
      *
      * @return Pref
      */
-    public function getPref() {
+    public function getPref()
+    {
         return $this->pref;
     }
 
@@ -79,7 +85,8 @@ class Email implements Property {
      *
      * @return string
      */
-    public function getValue() {
+    public function getValue()
+    {
         return $this->value;
     }
 
@@ -87,7 +94,8 @@ class Email implements Property {
      *
      * @param Type $type
      */
-    public function setType(Type $type) {
+    public function setType(Type $type)
+    {
         $this->type = $type;
     }
 
@@ -95,7 +103,8 @@ class Email implements Property {
      *
      * @param Pref $pref
      */
-    public function setPref(Pref $pref) {
+    public function setPref(Pref $pref)
+    {
         $this->pref = $pref;
     }
 
@@ -103,7 +112,8 @@ class Email implements Property {
      *
      * @param string $value
      */
-    public function setValue($value) {
+    public function setValue($value)
+    {
         $this->value = $value;
     }
 }

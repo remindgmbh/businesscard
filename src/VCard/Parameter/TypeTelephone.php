@@ -7,7 +7,8 @@ use Remind\BusinessCard\VCard\Parameter\Type;
 /**
  * Description of TypeTelephone
  */
-class TypeTelephone extends Type {
+class TypeTelephone extends Type
+{
 
     /**
      * @var string

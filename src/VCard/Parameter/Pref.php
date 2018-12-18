@@ -7,7 +7,8 @@ use Remind\BusinessCard\VCard\Parameter\Parameter;
 /**
  * Description of Pref
  */
-class Pref {
+class Pref
+{
 
     /**
      * @var string
@@ -34,7 +35,8 @@ class Pref {
      *
      * @param type $preference
      */
-    function __construct($preference = self::LOWEST) {
+    public function __construct($preference = self::LOWEST)
+    {
         $this->preference = self::LOWEST;
         $this->setPreference($preference);
     }
@@ -42,7 +44,8 @@ class Pref {
     /**
      *
      */
-    public function __toString() {
+    public function __toString()
+    {
         return self::NAME . '=' . $this->preference;
     }
 
@@ -50,7 +53,8 @@ class Pref {
      *
      * @return type
      */
-    function getPreference() {
+    public function getPreference()
+    {
         return $this->preference;
     }
 
@@ -59,7 +63,8 @@ class Pref {
      * @param type $preference
      * @return boolean
      */
-    function setPreference($preference) {
+    public function setPreference($preference)
+    {
 
         /**/
         $isSet = false;

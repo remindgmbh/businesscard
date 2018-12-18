@@ -7,7 +7,8 @@ use Remind\BusinessCard\VCard\Parameter\Parameter;
 /**
  * Description of Value
  */
-class Value {
+class Value
+{
 
     /**
      * @var string
@@ -94,11 +95,13 @@ class Value {
      *
      * @param type $type
      */
-    function __construct($type) {
+    public function __construct($type)
+    {
         $this->type = $type;
     }
 
-    public function __toString() {
+    public function __toString()
+    {
         return self::NAME . '=' . $this->type;
     }
 
@@ -106,7 +109,8 @@ class Value {
      *
      * @return string
      */
-    function getType() {
+    public function getType()
+    {
         return $this->type;
     }
 
@@ -114,7 +118,8 @@ class Value {
      *
      * @param string $type
      */
-    function setType($type) {
+    public function setType($type)
+    {
         $this->type = $type;
     }
 }

@@ -8,7 +8,8 @@ use Remind\BusinessCard\VCard\Property\Property;
 /**
  * Description of Version
  */
-class Version implements Property {
+class Version implements Property
+{
 
     /**
      * The vCard property this class represents.
@@ -44,7 +45,8 @@ class Version implements Property {
     /**
      *
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->version = self::VERSION_2_1;
     }
 
@@ -52,11 +54,13 @@ class Version implements Property {
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         return self::NAME . ':' . $this->version;
     }
 
-    public function getName() {
+    public function getName()
+    {
         return self::NAME;
     }
 
@@ -66,7 +70,8 @@ class Version implements Property {
      * @param Property $property The property to check
      * @return boolean Property is supported for set version
      */
-    public function isPropertyAllowed(Property $property) {
+    public function isPropertyAllowed(Property $property)
+    {
 
         /* Initialize the property storage */
         $properties = [];
@@ -99,7 +104,8 @@ class Version implements Property {
      * @param string $version A version string
      * @return boolean Will true or false if the version string is supported
      */
-    public function setVersion($version) {
+    public function setVersion($version)
+    {
 
         /* Store all versions into an array */
         $versions = [ self::VERSION_2_1, self::VERSION_3_0, self::VERSION_4_0 ];
@@ -109,7 +115,6 @@ class Version implements Property {
 
         /* Search the versions for the given string */
         if (array_search($version, $versions) !== false) {
-
             /* Version string is valid, so it is set */
             $this->version = $version;
 
@@ -124,7 +129,8 @@ class Version implements Property {
      *
      * @return string
      */
-    public function getVersion() {
+    public function getVersion()
+    {
         return $this->version;
     }
 }

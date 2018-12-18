@@ -16,7 +16,8 @@ use Remind\BusinessCard\VCard\Parameter\Parameter;
  *
  * @link https://tools.ietf.org/html/rfc6350#section-5.6
  */
-class Type {
+class Type
+{
 
     /**
      *
@@ -39,11 +40,13 @@ class Type {
      */
     protected $values = [];
 
-    function __construct() {
+    public function __construct()
+    {
         $this->values = [];
     }
 
-    public function __toString() {
+    public function __toString()
+    {
 
         if (!empty($this->values)) {
             return self::NAME . '=' . implode(',', $this->values);
@@ -56,7 +59,8 @@ class Type {
      *
      * @return array
      */
-    public function getValues() {
+    public function getValues()
+    {
         return $this->values;
     }
 
@@ -64,7 +68,8 @@ class Type {
      *
      * @param array $values
      */
-    public function setValues(array $values) {
+    public function setValues(array $values)
+    {
         $this->values = $values;
     }
 
@@ -72,7 +77,8 @@ class Type {
      *
      * @param type $name
      */
-    public function addValue($name) {
+    public function addValue($name)
+    {
         $this->values[] = $name;
     }
 
@@ -80,7 +86,7 @@ class Type {
      *
      * @param string $name
      */
-    public function removeValue($name) {
-
+    public function removeValue($name)
+    {
     }
 }

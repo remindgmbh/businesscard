@@ -9,7 +9,8 @@ use Remind\BusinessCard\VCard\Property\Version;
 /**
  * Description of Photo
  */
-class Photo implements Property {
+class Photo implements Property
+{
 
     /**
      * Name of the property this class represents
@@ -56,7 +57,8 @@ class Photo implements Property {
     /**
      *
      */
-    public function __construct(Version $version) {
+    public function __construct(Version $version)
+    {
         $this->version = $version;
         $this->imageType = '';
         $this->mimeType = '';
@@ -67,9 +69,10 @@ class Photo implements Property {
     /**
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
 
-        switch($this->version->getVersion()) {
+        switch ($this->version->getVersion()) {
             case Version::VERSION_2_1:
                 return $this->returnVersion21Formatted();
             case Version::VERSION_3_0:
@@ -81,7 +84,8 @@ class Photo implements Property {
         }
     }
 
-    public function getName() {
+    public function getName()
+    {
         return self::NAME;
     }
 
@@ -89,7 +93,8 @@ class Photo implements Property {
      *
      * @return string
      */
-    protected function returnVersion21Formatted() {
+    protected function returnVersion21Formatted()
+    {
 
         $ident = self::NAME . ';' . strtoupper($this->imageType);
 
@@ -107,7 +112,8 @@ class Photo implements Property {
      *
      * @return string
      */
-    protected function returnVersion30Formatted() {
+    protected function returnVersion30Formatted()
+    {
 
         $ident = self::NAME . ';TYPE=' . strtoupper($this->imageType);
 
@@ -125,7 +131,8 @@ class Photo implements Property {
      *
      * @return string
      */
-    protected function returnVersion40Formatted() {
+    protected function returnVersion40Formatted()
+    {
 
         if ($this->isUrl) {
             /* PHOTO;MEDIATYPE=image/jpeg:http://example.org/photo.jpg */
@@ -142,7 +149,8 @@ class Photo implements Property {
      *
      * @param string $imageUrl
      */
-    public function setImageFromUrl($imageUrl) {
+    public function setImageFromUrl($imageUrl)
+    {
         $this->image = $imageUrl;
         $this->isUrl = true;
     }
@@ -151,7 +159,8 @@ class Photo implements Property {
      *
      * @param string $imagePath
      */
-    public function setImageFromFile($imagePath) {
+    public function setImageFromFile($imagePath)
+    {
         $this->image = $imagePath;
         $this->isUrl = false;
     }
@@ -160,7 +169,8 @@ class Photo implements Property {
      *
      * @return string
      */
-    public function getImageType() {
+    public function getImageType()
+    {
         return $this->imageType;
     }
 
@@ -168,7 +178,8 @@ class Photo implements Property {
      *
      * @return string
      */
-    public function getMimeType() {
+    public function getMimeType()
+    {
         return $this->mimeType;
     }
 
@@ -176,7 +187,8 @@ class Photo implements Property {
      *
      * @return string
      */
-    public function getImage() {
+    public function getImage()
+    {
         return $this->image;
     }
 
@@ -184,7 +196,8 @@ class Photo implements Property {
      *
      * @return string
      */
-    public function getVersion() {
+    public function getVersion()
+    {
         return $this->version;
     }
 
@@ -192,7 +205,8 @@ class Photo implements Property {
      *
      * @param string $imageType
      */
-    public function setImageType($imageType) {
+    public function setImageType($imageType)
+    {
         $this->imageType = $imageType;
     }
 
@@ -200,7 +214,8 @@ class Photo implements Property {
      *
      * @param string $mimeType
      */
-    public function setMimeType($mimeType) {
+    public function setMimeType($mimeType)
+    {
         $this->mimeType = $mimeType;
     }
 
@@ -208,7 +223,8 @@ class Photo implements Property {
      *
      * @param Version $version
      */
-    public function setVersion(Version $version) {
+    public function setVersion(Version $version)
+    {
         $this->version = $version;
     }
 }

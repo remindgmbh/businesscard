@@ -8,7 +8,8 @@ use Remind\BusinessCard\VCard\Property\Property;
 /**
  * Description of Org
  */
-class Org implements Property {
+class Org implements Property
+{
 
     /**
      * @var string
@@ -25,7 +26,8 @@ class Org implements Property {
      *
      * @param string $name
      */
-    public function __construct($name) {
+    public function __construct($name)
+    {
         $this->name = $name;
     }
 
@@ -33,12 +35,14 @@ class Org implements Property {
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         // ORG:ABC\, Inc.;North American Division;Marketing
         return self::NAME . ':' . $this->name;
     }
 
-    public function getName() {
+    public function getName()
+    {
         return self::NAME;
     }
 
@@ -46,7 +50,8 @@ class Org implements Property {
      *
      * @return string
      */
-    public function getOrgName() {
+    public function getOrgName()
+    {
         return $this->name;
     }
 
@@ -54,7 +59,8 @@ class Org implements Property {
      *
      * @param string $name
      */
-    public function setOrgName($name) {
+    public function setOrgName($name)
+    {
         $this->name = $name;
     }
 }

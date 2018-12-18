@@ -8,7 +8,8 @@ use Remind\BusinessCard\VCard\Properties;
 /**
  * Description of End
  */
-class End implements Property {
+class End implements Property
+{
 
     /**
      * @var string
@@ -23,17 +24,21 @@ class End implements Property {
     /**
      *
      */
-    public function __construct() {}
+    public function __construct()
+    {
+    }
 
     /**
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         return self::NAME . ':' . self::VALUE;
     }
 
-    public function getName() {
+    public function getName()
+    {
         return self::NAME;
     }
 }

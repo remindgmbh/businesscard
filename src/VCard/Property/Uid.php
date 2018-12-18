@@ -8,7 +8,8 @@ use Remind\BusinessCard\VCard\Property\Property;
 /**
  * Description of Uid
  */
-class Uid implements Property {
+class Uid implements Property
+{
 
     /**
      * @var string
@@ -31,7 +32,8 @@ class Uid implements Property {
      *
      * @param string $uuid
      */
-    public function __construct($uuid) {
+    public function __construct($uuid)
+    {
         $this->uuid = $uuid;
     }
 
@@ -39,7 +41,8 @@ class Uid implements Property {
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         // UID:urn:uuid:da418720-3754-4631-a169-db89a02b831b
         if ($this->isFreetext) {
             return self::NAME . ':' . $this->uuid;
@@ -48,7 +51,8 @@ class Uid implements Property {
         }
     }
 
-    public function getName() {
+    public function getName()
+    {
         return self::NAME;
     }
 
@@ -59,7 +63,8 @@ class Uid implements Property {
      *
      * @param type $value
      */
-    public function setFreetextValue($value) {
+    public function setFreetextValue($value)
+    {
         $this->uuid = $value;
         $this->isFreetext = true;
     }
@@ -68,7 +73,8 @@ class Uid implements Property {
      *
      * @return string
      */
-    public function getUuid() {
+    public function getUuid()
+    {
         return $this->uuid;
     }
 
@@ -76,7 +82,8 @@ class Uid implements Property {
      *
      * @param string $uuid
      */
-    public function setUuid($uuid) {
+    public function setUuid($uuid)
+    {
         $this->uuid = $uuid;
         $this->isFreetext = false;
     }

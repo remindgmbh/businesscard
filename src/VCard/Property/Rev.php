@@ -8,7 +8,8 @@ use Remind\BusinessCard\VCard\Property\Property;
 /**
  * Description of Rev
  */
-class Rev implements Property {
+class Rev implements Property
+{
 
     /**
      * @var string
@@ -29,7 +30,8 @@ class Rev implements Property {
     /**
      *
      */
-    public function __construct() {
+    public function __construct()
+    {
         $this->date = new \DateTime();
     }
 
@@ -37,11 +39,13 @@ class Rev implements Property {
      *
      * @return string
      */
-    public function __toString() {
+    public function __toString()
+    {
         return self::NAME . ':' . $this->date->format(self::DATE_FORMAT);
     }
 
-    public function getName() {
+    public function getName()
+    {
         return self::NAME;
     }
 
@@ -49,7 +53,8 @@ class Rev implements Property {
      *
      * @return \DateTime
      */
-    public function getDate() {
+    public function getDate()
+    {
         return $this->date;
     }
 
@@ -57,7 +62,8 @@ class Rev implements Property {
      *
      * @param \DateTime $date
      */
-    public function setDate(\DateTime $date) {
+    public function setDate(\DateTime $date)
+    {
         $this->date = $date;
     }
 }
