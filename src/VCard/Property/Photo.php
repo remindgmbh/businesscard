@@ -2,9 +2,9 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use Remind\BusinessCard\VCard\Properties;
-use Remind\BusinessCard\VCard\Property\Property;
-use Remind\BusinessCard\VCard\Property\Version;
+use \Remind\BusinessCard\VCard\Properties;
+use \Remind\BusinessCard\VCard\Property\Property;
+use \Remind\BusinessCard\VCard\Property\Version;
 
 /**
  * Description of Photo

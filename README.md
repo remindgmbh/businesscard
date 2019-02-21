@@ -1,6 +1,12 @@
-################################################################################
-# REMIND Businesscard library                                                  #
-################################################################################
+# REMIND - Businesscard library
+
+![remind-badge](https://img.shields.io/badge/author-REMIND-black.svg?style=flat-square)
+![library-badge](https://img.shields.io/badge/library-green.svg?style=flat-square)
+![typo38-badge](https://img.shields.io/badge/TYPO3-8.7-yellow.svg?style=flat-square)
+![php71-badge](https://img.shields.io/badge/PHP-7.1-yellow.svg?style=flat-square)
+![license-badge](https://img.shields.io/badge/license-GPL--3.0-blue.svg?style=flat-square)
+[![build-status](https://jenkins.remind.de/buildStatus/icon?job=rmnd_businesscard)](https://jenkins.remind.de/job/rmnd_businesscard/)
+![version-badge](https://img.shields.io/badge/version-1.1.0-lightgrey.svg?style=flat-square)
 
 DESCRIPTION
 --------------------------------------------------------------------------------

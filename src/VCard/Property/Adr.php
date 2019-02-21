@@ -2,11 +2,11 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use Remind\BusinessCard\VCard\Parameter\Geo as GeoParameter;
-use Remind\BusinessCard\VCard\Parameter\Pref;
-use Remind\BusinessCard\VCard\Parameter\Type;
-use Remind\BusinessCard\VCard\Properties;
-use Remind\BusinessCard\VCard\Property\Property;
+use \Remind\BusinessCard\VCard\Parameter\Geo as GeoParameter;
+use \Remind\BusinessCard\VCard\Parameter\Pref;
+use \Remind\BusinessCard\VCard\Parameter\Type;
+use \Remind\BusinessCard\VCard\Properties;
+use \Remind\BusinessCard\VCard\Property\Property;
 
 /**
  * This class represents the ADR property of a vCard.
@@ -127,7 +127,7 @@ class Adr implements Property
             $this->type,
             $this->geo,
             $this->pref,
-        ]). ':' . $this->getLabel() . $this->getAddress();
+        ]) . ':' . $this->label . $this->getAddress();
     }
 
     /**

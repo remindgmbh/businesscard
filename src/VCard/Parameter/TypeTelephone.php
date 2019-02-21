@@ -2,7 +2,7 @@
 
 namespace Remind\BusinessCard\VCard\Parameter;
 
-use Remind\BusinessCard\VCard\Parameter\Type;
+use \Remind\BusinessCard\VCard\Parameter\Type;
 
 /**
  * Description of TypeTelephone

@@ -2,7 +2,7 @@
 
 namespace Remind\BusinessCard\VCard\Parameter;
 
-use Remind\BusinessCard\VCard\Parameter\Parameter;
+use \Remind\BusinessCard\VCard\Parameter\Parameter;
 
 /**
  * Description of Pref
@@ -53,7 +53,7 @@ class Pref
      *
      * @return type
      */
-    public function getPreference()
+    public function getPreference(): int
     {
         return $this->preference;
     }
@@ -61,9 +61,9 @@ class Pref
     /**
      *
      * @param type $preference
-     * @return boolean
+     * @return bool
      */
-    public function setPreference($preference)
+    public function setPreference(int $preference): bool
     {
 
         /**/

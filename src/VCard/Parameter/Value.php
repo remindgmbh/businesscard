@@ -2,7 +2,7 @@
 
 namespace Remind\BusinessCard\VCard\Parameter;
 
-use Remind\BusinessCard\VCard\Parameter\Parameter;
+use \Remind\BusinessCard\VCard\Parameter\Parameter;
 
 /**
  * Description of Value
@@ -93,9 +93,9 @@ class Value
 
     /**
      *
-     * @param type $type
+     * @param string $type
      */
-    public function __construct($type)
+    public function __construct(string $type)
     {
         $this->type = $type;
     }
@@ -109,7 +109,7 @@ class Value
      *
      * @return string
      */
-    public function getType()
+    public function getType(): string
     {
         return $this->type;
     }
@@ -118,7 +118,7 @@ class Value
      *
      * @param string $type
      */
-    public function setType($type)
+    public function setType(string $type): void
     {
         $this->type = $type;
     }

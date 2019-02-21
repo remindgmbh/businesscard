@@ -2,10 +2,10 @@
 
 namespace Remind\BusinessCard;
 
-use Remind\BusinessCard\VCard\Property\Property;
-use Remind\BusinessCard\VCard\Property\Begin;
-use Remind\BusinessCard\VCard\Property\End;
-use Remind\BusinessCard\VCard\Property\Version;
+use \Remind\BusinessCard\VCard\Property\Property;
+use \Remind\BusinessCard\VCard\Property\Begin;
+use \Remind\BusinessCard\VCard\Property\End;
+use \Remind\BusinessCard\VCard\Property\Version;
 
 /**
  * Description of VCard
@@ -85,9 +85,9 @@ class VCard
     /**
      *
      * @param Property $property
-     * @return boolean
+     * @return bool
      */
-    public function addProperty(Property $property)
+    public function addProperty(Property $property): bool
     {
 
         /**/
@@ -105,7 +105,7 @@ class VCard
      *
      * @return array
      */
-    public function getProperties()
+    public function getProperties(): array
     {
         return $this->properties;
     }
@@ -114,7 +114,7 @@ class VCard
      *
      * @return Version
      */
-    public function getVersion()
+    public function getVersion(): Version
     {
         return $this->version;
     }
@@ -122,8 +122,9 @@ class VCard
     /**
      *
      * @param array $properties
+     * @return void
      */
-    public function setProperties(array $properties)
+    public function setProperties(array $properties): void
     {
         $this->properties = $properties;
     }
@@ -131,8 +132,9 @@ class VCard
     /**
      *
      * @param Version $version
+     * @return void
      */
-    public function setVersion(Version $version)
+    public function setVersion(Version $version): void
     {
         $this->version = $version;
     }

@@ -326,7 +326,7 @@ class Properties
      *
      * @return array All properties for 2.1 vCard files
      */
-    public static function getVersion21Properties()
+    public static function getVersion21Properties(): array
     {
         return [
             self::ADR, self::AGENT, self::BDAY, self::BEGIN, self::CATEGORIES,
@@ -344,7 +344,7 @@ class Properties
      *
      * @return array All properties for 3.0 vCard files
      */
-    public static function getVersion30Properties()
+    public static function getVersion30Properties(): array
     {
         return [
             self::ADR, self::AGENT, self::ANNIVERSARY, self::BDAY, self::BEGIN,
@@ -363,7 +363,7 @@ class Properties
      *
      * @return array All properties for 4.0 vCard files
      */
-    public static function getVersion40Properties()
+    public static function getVersion40Properties(): array
     {
         return [
             self::ADR, self::ANNIVERSARY, self::BDAY, self::BEGIN,
@@ -377,7 +377,7 @@ class Properties
         ];
     }
 
-    public static function getRequiredProperties()
+    public static function getRequiredProperties(): array
     {
         return [ self::BEGIN, self::END, self::VERSION ];
     }
@@ -386,7 +386,7 @@ class Properties
      *
      * @return type
      */
-    public static function getVersion21RequiredProperties()
+    public static function getVersion21RequiredProperties(): array
     {
         return [ self::BEGIN, self::END, self::N, self::VERSION ];
     }
@@ -395,7 +395,7 @@ class Properties
      *
      * @return type
      */
-    public static function getVersion30RequiredProperties()
+    public static function getVersion30RequiredProperties(): array
     {
         return [ self::BEGIN, self::END, self::FN, self::N, self::VERSION ];
     }
@@ -404,7 +404,7 @@ class Properties
      *
      * @return type
      */
-    public static function getVersion40RequiredProperties()
+    public static function getVersion40RequiredProperties(): array
     {
         return [ self::BEGIN, self::END, self::FN, self::VERSION ];
     }

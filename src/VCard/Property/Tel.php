@@ -2,11 +2,11 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use Remind\BusinessCard\VCard\Parameter\Pref;
-use Remind\BusinessCard\VCard\Parameter\TypeTelephone;
-use Remind\BusinessCard\VCard\Parameter\Value;
-use Remind\BusinessCard\VCard\Properties;
-use Remind\BusinessCard\VCard\Property\Property;
+use \Remind\BusinessCard\VCard\Parameter\Pref;
+use \Remind\BusinessCard\VCard\Parameter\TypeTelephone;
+use \Remind\BusinessCard\VCard\Parameter\Value;
+use \Remind\BusinessCard\VCard\Properties;
+use \Remind\BusinessCard\VCard\Property\Property;
 
 /**
  * Description of Tel
