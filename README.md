@@ -4,9 +4,8 @@ This library provides a PHP library for generating business cards based on
 the vCard format in various formats.
 
 ![remind-badge](https://img.shields.io/badge/author-REMIND-black.svg?style=flat-square)
-![library-badge](https://img.shields.io/badge/library-green.svg?style=flat-square)
-![typo39-badge](https://img.shields.io/badge/TYPO3-9.5-green.svg?style=flat-square)
-![php71-badge](https://img.shields.io/badge/PHP-7.2-yellow.svg?style=flat-square)
+![library-badge](https://img.shields.io/badge/type-library-green.svg?style=flat-square)
+![php72-badge](https://img.shields.io/badge/PHP-7.2-yellow.svg?style=flat-square)
 ![license-badge](https://img.shields.io/badge/license-GPL--3.0-blue.svg?style=flat-square)
 ![version-badge](https://img.shields.io/badge/version-1.1.0-lightgrey.svg?style=flat-square)
 
