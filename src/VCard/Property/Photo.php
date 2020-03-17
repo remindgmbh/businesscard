@@ -95,6 +95,9 @@ class Photo implements Property
      */
     protected function returnVersion21Formatted()
     {
+        if (empty($this->image)) {
+            return '';
+        }
 
         $ident = self::NAME . ';' . strtoupper($this->imageType);
 
@@ -114,6 +117,9 @@ class Photo implements Property
      */
     protected function returnVersion30Formatted()
     {
+        if (empty($this->image)) {
+            return '';
+        }
 
         $ident = self::NAME . ';TYPE=' . strtoupper($this->imageType);
 
@@ -133,6 +139,10 @@ class Photo implements Property
      */
     protected function returnVersion40Formatted()
     {
+
+        if (empty($this->image)) {
+            return '';
+        }
 
         if ($this->isUrl) {
             /* PHOTO;MEDIATYPE=image/jpeg:http://example.org/photo.jpg */

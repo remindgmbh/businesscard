@@ -38,7 +38,7 @@ class Org implements Property
     public function __toString()
     {
         // ORG:ABC\, Inc.;North American Division;Marketing
-        return self::NAME . ':' . $this->name;
+        return self::NAME . ';CHARSET=ISO-8859-1:' . $this->name;
     }
 
     public function getName()

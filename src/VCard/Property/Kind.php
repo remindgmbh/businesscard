@@ -84,7 +84,7 @@ class Kind implements Property
      */
     public function __toString()
     {
-        return self::NAME . ':' . $this->type;
+        return self::NAME . ';CHARSET=ISO-8859-1:' . $this->type;
     }
 
     public function getName()

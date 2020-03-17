@@ -59,7 +59,9 @@ class Email implements Property
     public function __toString()
     {
         return implode(';', [
-            self::NAME, $this->type, $this->pref
+                self::NAME,
+                'CHARSET=ISO-8859-1',
+                $this->type, $this->pref
         ]) . ':' . $this->value;
     }
 

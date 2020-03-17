@@ -37,7 +37,7 @@ class Fn implements Property
      */
     public function __toString()
     {
-        return self::NAME . ':' . $this->identifier;
+        return self::NAME . ';CHARSET=ISO-8859-1:' . $this->identifier;
     }
 
     public function getName()

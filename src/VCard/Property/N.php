@@ -64,7 +64,7 @@ class N implements Property
      */
     public function __toString()
     {
-        return self::NAME . ':' . implode(';', [
+        return self::NAME . ';CHARSET=ISO-8859-1:' . implode(';', [
             $this->familyName,
             $this->givenName,
             $this->additionalName,

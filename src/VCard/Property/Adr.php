@@ -124,6 +124,7 @@ class Adr implements Property
     {
         return implode(';', [
             self::PROPERTY_NAME,
+            'CHARSET=ISO-8859-1',
             $this->type,
             $this->geo,
             $this->pref,
