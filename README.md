@@ -7,7 +7,7 @@ the vCard format in various formats.
 ![library-badge](https://img.shields.io/badge/type-library-green.svg?style=flat-square)
 ![php72-badge](https://img.shields.io/badge/PHP-7.2-yellow.svg?style=flat-square)
 ![license-badge](https://img.shields.io/badge/license-GPL--3.0-blue.svg?style=flat-square)
-![version-badge](https://img.shields.io/badge/version-1.1.0-lightgrey.svg?style=flat-square)
+![version-badge](https://img.shields.io/badge/version-1.2.0-lightgrey.svg?style=flat-square)
 
 ## Build Status
 
