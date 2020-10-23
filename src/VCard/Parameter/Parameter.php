@@ -3,11 +3,10 @@
 namespace Remind\BusinessCard\VCard\Parameter;
 
 /**
- * Description of Parameter
+ * Description of Parameter.
  */
 class Parameter
 {
-
     /**
      * @var string
      */

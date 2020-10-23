@@ -2,11 +2,10 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Parameter\Geo as GeoParameter;
-use \Remind\BusinessCard\VCard\Parameter\Pref;
-use \Remind\BusinessCard\VCard\Parameter\Type;
-use \Remind\BusinessCard\VCard\Properties;
-use \Remind\BusinessCard\VCard\Property\Property;
+use Remind\BusinessCard\VCard\Parameter\Geo as GeoParameter;
+use Remind\BusinessCard\VCard\Parameter\Pref;
+use Remind\BusinessCard\VCard\Parameter\Type;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
  * This class represents the ADR property of a vCard.
@@ -15,9 +14,9 @@ use \Remind\BusinessCard\VCard\Property\Property;
  */
 class Adr implements Property
 {
-
     /**
      * Property name this class represents.
+     *
      * @var string
      */
     const PROPERTY_NAME = Properties::ADR;
@@ -31,6 +30,7 @@ class Adr implements Property
 
     /**
      * The extended address (e.g., apartment or suite number).
+     *
      * @var string
      */
     protected $extendedAddress = '';
@@ -71,7 +71,7 @@ class Adr implements Property
     protected $countryName = '';
 
     /**
-     * Optional type of this address item,
+     * Optional type of this address item,.
      *
      * @var Type
      */
@@ -128,26 +128,24 @@ class Adr implements Property
             $this->type,
             $this->geo,
             $this->pref,
-        ]) . ':' . $this->label . $this->getAddress();
+        ]).':'.$this->label.$this->getAddress();
     }
 
     /**
-     *
      * @return string
      */
     protected function getAddress()
     {
-        return $this->postOfficeBox . ';'
-            . $this->extendedAddress . ';'
-            . $this->streetAddress . ';'
-            . $this->locality . ';'
-            . $this->region . ';'
-            . $this->postalCode . ';'
-            . $this->countryName;
+        return $this->postOfficeBox.';'
+            .$this->extendedAddress.';'
+            .$this->streetAddress.';'
+            .$this->locality.';'
+            .$this->region.';'
+            .$this->postalCode.';'
+            .$this->countryName;
     }
 
     /**
-     *
      * @return string
      */
     public function getName()
@@ -156,7 +154,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function getPostOfficeBox()
@@ -165,7 +162,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function getExtendedAddress()
@@ -174,7 +170,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function getStreetAddress()
@@ -183,7 +178,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function getLocality()
@@ -192,7 +186,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function getRegion()
@@ -201,7 +194,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function getPostalCode()
@@ -210,7 +202,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function getCountryName()
@@ -219,7 +210,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @return Type
      */
     public function getType()
@@ -228,7 +218,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @return Pref
      */
     public function getPref()
@@ -237,7 +226,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function getLabel()
@@ -246,7 +234,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @return GeoParameter
      */
     public function getGeo()
@@ -255,7 +242,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @param string $postOfficeBox
      */
     public function setPostOfficeBox($postOfficeBox)
@@ -264,7 +250,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @param string $extendedAddress
      */
     public function setExtendedAddress($extendedAddress)
@@ -273,7 +258,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @param string $streetAddress
      */
     public function setStreetAddress($streetAddress)
@@ -282,7 +266,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @param string $locality
      */
     public function setLocality($locality)
@@ -291,7 +274,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @param string $region
      */
     public function setRegion($region)
@@ -300,7 +282,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @param string $postalCode
      */
     public function setPostalCode($postalCode)
@@ -309,7 +290,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @param string $countryName
      */
     public function setCountryName($countryName)
@@ -318,7 +298,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @param Type $type
      */
     public function setType(Type $type)
@@ -327,7 +306,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @param Pref $pref
      */
     public function setPref(Pref $pref)
@@ -336,7 +314,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @param string $label
      */
     public function setLabel($label)
@@ -345,7 +322,6 @@ class Adr implements Property
     }
 
     /**
-     *
      * @param GeoParameter $geo
      */
     public function setGeo(GeoParameter $geo)

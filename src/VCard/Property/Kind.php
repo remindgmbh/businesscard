@@ -2,19 +2,18 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Properties;
-use \Remind\BusinessCard\VCard\Property\Property;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
- * Description of Kind
+ * Description of Kind.
  *
  * @link https://tools.ietf.org/html/rfc6350#section-6.1.4
  */
 class Kind implements Property
 {
-
     /**
      * Name of the vCard property this class represents.
+     *
      * @var string
      */
     const NAME = Properties::KIND;
@@ -22,6 +21,7 @@ class Kind implements Property
     /**
      * A vCard representing a single person or entity.
      * This is the default kind of vCard.
+     *
      * @var string
      */
     const TYPE_INDIVIDUAL = 'individual';
@@ -35,6 +35,7 @@ class Kind implements Property
      * without MEMBER properties can be considered an abstract
      * grouping, or one whose members are known empirically (perhaps
      * "IETF Participants" or "Republican U.S. Senators").
+     *
      * @var string
      */
     const TYPE_GROUP = 'group';
@@ -56,19 +57,16 @@ class Kind implements Property
      * A location vCard without a GEO property can be considered an
      * abstract location, or one whose definition is known empirically
      * (perhaps "New England" or "The Seashore").
+     *
      * @var string
      */
     const TYPE_LOCATION = 'location';
 
     /**
-     *
      * @var string
      */
     protected $type = self::TYPE_INDIVIDUAL;
 
-    /**
-     *
-     */
     public function __construct($type)
     {
 
@@ -79,12 +77,9 @@ class Kind implements Property
         $this->setType($type);
     }
 
-    /**
-     *
-     */
     public function __toString()
     {
-        return self::NAME . ';CHARSET=ISO-8859-1:' . $this->type;
+        return self::NAME.';CHARSET=ISO-8859-1:'.$this->type;
     }
 
     public function getName()
@@ -93,9 +88,9 @@ class Kind implements Property
     }
 
     /**
-     *
      * @param string $type
-     * @return boolean
+     *
+     * @return bool
      */
     public function setType($type)
     {
@@ -103,7 +98,7 @@ class Kind implements Property
         /* Store all versions into an array */
         $types = [
             self::TYPE_GROUP, self::TYPE_INDIVIDUAL,
-            self::TYPE_LOCATION, self::TYPE_ORGANISATION
+            self::TYPE_LOCATION, self::TYPE_ORGANISATION,
         ];
 
         /* Prepare the return value */
@@ -122,7 +117,6 @@ class Kind implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function getType()

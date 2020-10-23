@@ -2,12 +2,12 @@
 
 namespace Remind\BusinessCard\Tests\Unit;
 
-use \Remind\BusinessCard\VCard;
-use \Remind\BusinessCard\VCard\Property\Version;
-use \PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestCase;
+use Remind\BusinessCard\VCard;
+use Remind\BusinessCard\VCard\Property\Version;
 
 /**
- * Description of VCardTest
+ * Description of VCardTest.
  */
 class VCardTest extends TestCase
 {
@@ -17,7 +17,7 @@ class VCardTest extends TestCase
         $version->setVersion(Version::VERSION_2_1);
         $vCard = new VCard($version);
 
-        $expected = 'BEGIN:VCARD' . chr(10) . 'VERSION:2.1' . chr(10) . 'END:VCARD';
+        $expected = 'BEGIN:VCARD'.chr(10).'VERSION:2.1'.chr(10).'END:VCARD';
 
         $this->assertEquals($expected, (string) $vCard);
     }
@@ -28,7 +28,7 @@ class VCardTest extends TestCase
         $version->setVersion(Version::VERSION_3_0);
         $vCard = new VCard($version);
 
-        $expected = 'BEGIN:VCARD' . chr(10) . 'VERSION:3.0' . chr(10) . 'END:VCARD';
+        $expected = 'BEGIN:VCARD'.chr(10).'VERSION:3.0'.chr(10).'END:VCARD';
 
         $this->assertEquals($expected, (string) $vCard);
     }
@@ -39,7 +39,7 @@ class VCardTest extends TestCase
         $version->setVersion(Version::VERSION_4_0);
         $vCard = new VCard($version);
 
-        $expected = 'BEGIN:VCARD' . chr(10) . 'VERSION:4.0' . chr(10) . 'END:VCARD';
+        $expected = 'BEGIN:VCARD'.chr(10).'VERSION:4.0'.chr(10).'END:VCARD';
 
         $this->assertEquals($expected, (string) $vCard);
     }

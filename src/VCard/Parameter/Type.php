@@ -2,9 +2,7 @@
 
 namespace Remind\BusinessCard\VCard\Parameter;
 
-use \Remind\BusinessCard\VCard\Parameter\Parameter;
-
-use function \array_search;
+use function array_search;
 
 /**
  * The TYPE parameter has multiple, different uses. In general, it is a
@@ -20,51 +18,35 @@ use function \array_search;
  */
 class Type
 {
-    /**
-     *
-     */
     const NAME = Parameter::TYPE;
 
-    /**
-     *
-     */
     const VALUE_HOME = 'home';
 
-    /**
-     *
-     */
     const VALUE_WORK = 'work';
 
     /**
-     *
      * @var array
      */
     protected $values = [];
 
-    /**
-     *
-     */
     public function __construct()
     {
         $this->values = [];
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
     {
-
         if (!empty($this->values)) {
-            return self::NAME . '=' . implode(',', $this->values);
+            return self::NAME.'='.implode(',', $this->values);
         }
 
         return '';
     }
 
     /**
-     *
      * @return array
      */
     public function getValues(): array
@@ -73,7 +55,6 @@ class Type
     }
 
     /**
-     *
      * @param array $values
      */
     public function setValues(array $values): void
@@ -82,7 +63,6 @@ class Type
     }
 
     /**
-     *
      * @param type $name
      */
     public function addValue($name): void
@@ -91,7 +71,6 @@ class Type
     }
 
     /**
-     *
      * @param string $name
      */
     public function removeValue(string $name): void

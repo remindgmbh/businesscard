@@ -2,28 +2,24 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Properties;
-use \Remind\BusinessCard\VCard\Property\Property;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
- * Description of Title
+ * Description of Title.
  */
 class Title implements Property
 {
-
     /**
      * @var string
      */
     const NAME = Properties::TITLE;
 
     /**
-     *
      * @var string
      */
     protected $title = '';
 
     /**
-     *
      * @param string $title
      */
     public function __construct($title)
@@ -32,12 +28,11 @@ class Title implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
     {
-        return self::NAME . ';CHARSET=ISO-8859-1:' . $this->title;
+        return self::NAME.';CHARSET=ISO-8859-1:'.$this->title;
     }
 
     public function getName()
@@ -46,7 +41,6 @@ class Title implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function getTitle()
@@ -55,7 +49,6 @@ class Title implements Property
     }
 
     /**
-     *
      * @param string $title
      */
     public function setTitle($title)

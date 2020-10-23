@@ -2,41 +2,33 @@
 
 namespace Remind\BusinessCard\VCard\Parameter;
 
-use \Remind\BusinessCard\VCard\Parameter\Parameter;
-use \Remind\BusinessCard\VCard\Property\Version;
+use Remind\BusinessCard\VCard\Property\Version;
 
 /**
- * Description of Geo
+ * Description of Geo.
  */
 class Geo
 {
-
     /**
      * @var string
      */
     const NAME = Parameter::GEO;
 
     /**
-     *
      * @var string
      */
     protected $latitude = '';
 
     /**
-     *
      * @var string
      */
     protected $longitude = '';
 
     /**
-     *
      * @var Version
      */
     protected $version = null;
 
-    /**
-     *
-     */
     public function __construct(Version $version)
     {
         $this->latitude = '';
@@ -45,19 +37,16 @@ class Geo
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
     {
-
         $loc = implode(',', [$this->latitude, $this->longitude]);
 
-        return self::NAME . ':geo:' . $loc;
+        return self::NAME.':geo:'.$loc;
     }
 
     /**
-     *
      * @return string
      */
     public function getLatitude(): string
@@ -66,7 +55,6 @@ class Geo
     }
 
     /**
-     *
      * @return string
      */
     public function getLongitude(): string
@@ -75,7 +63,6 @@ class Geo
     }
 
     /**
-     *
      * @param string $latitude
      */
     public function setLatitude(string $latitude): void
@@ -84,7 +71,6 @@ class Geo
     }
 
     /**
-     *
      * @param string $longitude
      */
     public function setLongitude(string $longitude): void

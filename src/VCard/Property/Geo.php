@@ -2,36 +2,30 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Properties;
-use \Remind\BusinessCard\VCard\Property\Property;
-use \Remind\BusinessCard\VCard\Property\Version;
-use \Remind\BusinessCard\VCard\Parameter\Geo as GeoParameter;
+use Remind\BusinessCard\VCard\Parameter\Geo as GeoParameter;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
- * Description of Geo
+ * Description of Geo.
  */
 class Geo implements Property
 {
-
     /**
      * @var string
      */
     const NAME = Properties::GEO;
 
     /**
-     *
      * @var GeoParameter
      */
     protected $geo = null;
 
     /**
-     *
      * @var Version
      */
     protected $version = null;
 
     /**
-     *
      * @param Version $version
      */
     public function __construct(Version $version)
@@ -41,15 +35,13 @@ class Geo implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
     {
-
         $loc = implode(',', $this->latitude, $this->longitude);
 
-        return self::NAME . ':"geo:' . $loc;
+        return self::NAME.':"geo:'.$loc;
     }
 
     public function getName()
@@ -58,7 +50,6 @@ class Geo implements Property
     }
 
     /**
-     *
      * @return GeoParameter
      */
     public function getGeo()
@@ -67,7 +58,6 @@ class Geo implements Property
     }
 
     /**
-     *
      * @return Version
      */
     public function getVersion()
@@ -76,7 +66,6 @@ class Geo implements Property
     }
 
     /**
-     *
      * @param GeoParameter $geo
      */
     public function setGeo(GeoParameter $geo)
@@ -85,7 +74,6 @@ class Geo implements Property
     }
 
     /**
-     *
      * @param Version $version
      */
     public function setVersion(Version $version)

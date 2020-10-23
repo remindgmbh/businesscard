@@ -2,14 +2,11 @@
 
 namespace Remind\BusinessCard\VCard\Parameter;
 
-use \Remind\BusinessCard\VCard\Parameter\Parameter;
-
 /**
- * Description of Value
+ * Description of Value.
  */
 class Value
 {
-
     /**
      * @var string
      */
@@ -86,13 +83,11 @@ class Value
     const TYPE_X_NAME = 'x-name';
 
     /**
-     *
      * @var string
      */
     protected $type = '';
 
     /**
-     *
      * @param string $type
      */
     public function __construct(string $type)
@@ -102,11 +97,10 @@ class Value
 
     public function __toString()
     {
-        return self::NAME . '=' . $this->type;
+        return self::NAME.'='.$this->type;
     }
 
     /**
-     *
      * @return string
      */
     public function getType(): string
@@ -115,7 +109,6 @@ class Value
     }
 
     /**
-     *
      * @param string $type
      */
     public function setType(string $type): void

@@ -2,11 +2,11 @@
 
 namespace Remind\BusinessCard\Tests\Unit\Property;
 
-use \PHPUnit\Framework\TestCase;
-use \Remind\BusinessCard\VCard\Property\End;
+use PHPUnit\Framework\TestCase;
+use Remind\BusinessCard\VCard\Property\End;
 
 /**
- * Description of BeginTest
+ * Description of BeginTest.
  */
 class EndTest extends TestCase
 {

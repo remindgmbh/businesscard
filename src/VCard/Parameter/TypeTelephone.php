@@ -2,14 +2,11 @@
 
 namespace Remind\BusinessCard\VCard\Parameter;
 
-use \Remind\BusinessCard\VCard\Parameter\Type;
-
 /**
- * Description of TypeTelephone
+ * Description of TypeTelephone.
  */
 class TypeTelephone extends Type
 {
-
     /**
      * @var string
      */

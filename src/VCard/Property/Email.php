@@ -2,43 +2,37 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Parameter\Pref;
-use \Remind\BusinessCard\VCard\Parameter\Type;
-use \Remind\BusinessCard\VCard\Property\Property;
-use \Remind\BusinessCard\VCard\Properties;
+use Remind\BusinessCard\VCard\Parameter\Pref;
+use Remind\BusinessCard\VCard\Parameter\Type;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
- * Description of Email
+ * Description of Email.
  */
 class Email implements Property
 {
-
     /**
      * @var string
      */
     const NAME = Properties::EMAIL;
 
     /**
-     *
      * @var Type
      */
     protected $type = null;
 
     /**
-     *
      * @var Pref
      */
     protected $pref = null;
 
     /**
-     *
      * @var string
      */
     protected $value = '';
 
     /**
-     *
-     * @param Type $type
+     * @param Type   $type
      * @param string $value
      */
     public function __construct(Type $type, $value)
@@ -59,14 +53,13 @@ class Email implements Property
     public function __toString()
     {
         return implode(';', [
-                self::NAME,
-                'CHARSET=ISO-8859-1',
-                $this->type, $this->pref
-        ]) . ':' . $this->value;
+            self::NAME,
+            'CHARSET=ISO-8859-1',
+            $this->type, $this->pref,
+        ]).':'.$this->value;
     }
 
     /**
-     *
      * @return Type
      */
     public function getType()
@@ -75,7 +68,6 @@ class Email implements Property
     }
 
     /**
-     *
      * @return Pref
      */
     public function getPref()
@@ -84,7 +76,6 @@ class Email implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function getValue()
@@ -93,7 +84,6 @@ class Email implements Property
     }
 
     /**
-     *
      * @param Type $type
      */
     public function setType(Type $type)
@@ -102,7 +92,6 @@ class Email implements Property
     }
 
     /**
-     *
      * @param Pref $pref
      */
     public function setPref(Pref $pref)
@@ -111,7 +100,6 @@ class Email implements Property
     }
 
     /**
-     *
      * @param string $value
      */
     public function setValue($value)

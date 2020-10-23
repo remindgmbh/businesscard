@@ -2,15 +2,13 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Properties;
-use \Remind\BusinessCard\VCard\Property\Property;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
- * Description of Rev
+ * Description of Rev.
  */
 class Rev implements Property
 {
-
     /**
      * @var string
      */
@@ -22,26 +20,21 @@ class Rev implements Property
     const DATE_FORMAT = 'Ymd\THisT';
 
     /**
-     *
      * @var \DateTime
      */
     protected $date = null;
 
-    /**
-     *
-     */
     public function __construct()
     {
         $this->date = new \DateTime();
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
     {
-        return self::NAME . ':' . $this->date->format(self::DATE_FORMAT);
+        return self::NAME.':'.$this->date->format(self::DATE_FORMAT);
     }
 
     public function getName()
@@ -50,7 +43,6 @@ class Rev implements Property
     }
 
     /**
-     *
      * @return \DateTime
      */
     public function getDate()
@@ -59,7 +51,6 @@ class Rev implements Property
     }
 
     /**
-     *
      * @param \DateTime $date
      */
     public function setDate(\DateTime $date)

@@ -2,34 +2,29 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Properties;
-use \Remind\BusinessCard\VCard\Property\Property;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
- * Description of Uid
+ * Description of Uid.
  */
 class Uid implements Property
 {
-
     /**
      * @var string
      */
     const NAME = Properties::UID;
 
     /**
-     *
      * @var string
      */
     protected $uuid = '';
 
     /**
-     *
      * @var bool
      */
     protected $isFreetext = false;
 
     /**
-     *
      * @param string $uuid
      */
     public function __construct($uuid)
@@ -38,16 +33,15 @@ class Uid implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
     {
         // UID:urn:uuid:da418720-3754-4631-a169-db89a02b831b
         if ($this->isFreetext) {
-            return self::NAME . ':' . $this->uuid;
+            return self::NAME.':'.$this->uuid;
         } else {
-            return self::NAME . ':urn:uuid:' . $this->uuid;
+            return self::NAME.':urn:uuid:'.$this->uuid;
         }
     }
 
@@ -70,7 +64,6 @@ class Uid implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function getUuid()
@@ -79,7 +72,6 @@ class Uid implements Property
     }
 
     /**
-     *
      * @param string $uuid
      */
     public function setUuid($uuid)

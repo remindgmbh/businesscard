@@ -2,14 +2,11 @@
 
 namespace Remind\BusinessCard\VCard\Parameter;
 
-use \Remind\BusinessCard\VCard\Parameter\Parameter;
-
 /**
- * Description of Pref
+ * Description of Pref.
  */
 class Pref
 {
-
     /**
      * @var string
      */
@@ -26,13 +23,11 @@ class Pref
     const HIGHEST = 1;
 
     /**
-     *
      * @var int
      */
     protected $preference = self::LOWEST;
 
     /**
-     *
      * @param type $preference
      */
     public function __construct($preference = self::LOWEST)
@@ -41,16 +36,12 @@ class Pref
         $this->setPreference($preference);
     }
 
-    /**
-     *
-     */
     public function __toString()
     {
-        return self::NAME . '=' . $this->preference;
+        return self::NAME.'='.$this->preference;
     }
 
     /**
-     *
      * @return type
      */
     public function getPreference(): int
@@ -59,8 +50,8 @@ class Pref
     }
 
     /**
-     *
      * @param type $preference
+     *
      * @return bool
      */
     public function setPreference(int $preference): bool

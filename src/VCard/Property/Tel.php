@@ -2,51 +2,44 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Parameter\Pref;
-use \Remind\BusinessCard\VCard\Parameter\TypeTelephone;
-use \Remind\BusinessCard\VCard\Parameter\Value;
-use \Remind\BusinessCard\VCard\Properties;
-use \Remind\BusinessCard\VCard\Property\Property;
+use Remind\BusinessCard\VCard\Parameter\Pref;
+use Remind\BusinessCard\VCard\Parameter\TypeTelephone;
+use Remind\BusinessCard\VCard\Parameter\Value;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
- * Description of Tel
+ * Description of Tel.
  */
 class Tel implements Property
 {
-
     /**
      * @var string
      */
     const NAME = Properties::TEL;
 
     /**
-     *
      * @var Value
      */
     protected $value = null;
 
     /**
-     *
      * @var Pref
      */
     protected $pref = null;
 
     /**
-     *
      * @var string
      */
     protected $content = '';
 
     /**
-     *
      * @var TypeTelephone
      */
     protected $type = null;
 
     /**
-     *
      * @param TypeTelephone $type
-     * @param string $content
+     * @param string        $content
      */
     public function __construct(TypeTelephone $type, $content)
     {
@@ -57,7 +50,6 @@ class Tel implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function __toString()
@@ -65,8 +57,8 @@ class Tel implements Property
         // TEL;VALUE=uri;PREF=1;TYPE="voice,home":tel:+1-555-555-5555;ext=5555
 
         return implode(';', [
-            self::NAME, $this->value, $this->pref, $this->type
-        ]). ':' . $this->content;
+            self::NAME, $this->value, $this->pref, $this->type,
+        ]).':'.$this->content;
     }
 
     public function getName()
@@ -75,7 +67,6 @@ class Tel implements Property
     }
 
     /**
-     *
      * @return Value
      */
     public function getValue()
@@ -84,7 +75,6 @@ class Tel implements Property
     }
 
     /**
-     *
      * @return Pref
      */
     public function getPref()
@@ -93,7 +83,6 @@ class Tel implements Property
     }
 
     /**
-     *
      * @return string
      */
     public function getContent()
@@ -102,7 +91,6 @@ class Tel implements Property
     }
 
     /**
-     *
      * @return TypeTelephone
      */
     public function getType()
@@ -111,7 +99,6 @@ class Tel implements Property
     }
 
     /**
-     *
      * @param Value $value
      */
     public function setValue(Value $value)
@@ -120,7 +107,6 @@ class Tel implements Property
     }
 
     /**
-     *
      * @param Pref $pref
      */
     public function setPref(Pref $pref)
@@ -129,7 +115,6 @@ class Tel implements Property
     }
 
     /**
-     *
      * @param string $content
      */
     public function setContent($content)
@@ -138,7 +123,6 @@ class Tel implements Property
     }
 
     /**
-     *
      * @param TypeTelephone $type
      */
     public function setType(TypeTelephone $type)
