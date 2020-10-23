@@ -22,6 +22,9 @@ This library provides an object oriented aproach for generating vCard files.
 
 ## DESCRIPTION
 
+Because of the new reserved keyword ```fn``` in PHP 7.4 this library currently
+does not offer support for this PHP version.
+
 ### vCard
 This implementation is incomplete at the moment as not all fields and parameters
 of the vCard rfc6350 are fully implemented.

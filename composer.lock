@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5eac578f4f626528c068763f5162c49f",
+    "content-hash": "f5ab060a10e83b7f33af10f09e65903f",
     "packages": [],
     "packages-dev": [
         {
@@ -1451,8 +1451,14 @@
             "version": "0.1.2",
             "source": {
                 "type": "git",
-                "url": "git@bitbucket.org:remindgmbh/confluence-changelog.git",
+                "url": "https://github.com/remindgmbh/confluence-changelog.git",
                 "reference": "abb11c5af0f36ba08ea931e1a69f4574134cd4a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/remindgmbh/confluence-changelog/zipball/abb11c5af0f36ba08ea931e1a69f4574134cd4a1",
+                "reference": "abb11c5af0f36ba08ea931e1a69f4574134cd4a1",
+                "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "^6.0.0",
@@ -3504,7 +3510,7 @@
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.2.0"
+        "php": "^7.2.0 <7.4.0"
     },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"

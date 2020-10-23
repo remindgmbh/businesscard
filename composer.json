@@ -29,7 +29,7 @@
         "apcu-autoloader": true
     },
     "require": {
-        "php": "^7.2.0"
+        "php": "^7.2.0 <7.4.0"
     },
     "require-dev": {
         "phploc/phploc": "^5.0.0",
