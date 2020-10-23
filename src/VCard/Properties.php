@@ -8,13 +8,12 @@ namespace Remind\BusinessCard\VCard;
  */
 class Properties
 {
-
     /**
      * A structured representation of the physical delivery address
      * for the vCard object.
      * @var string
      */
-    const ADR = 'ADR';
+    public const ADR = 'ADR';
 
     /**
      * Information about another person who will act on behalf
@@ -23,99 +22,99 @@ class Properties
      * Can be either a URL or an embedded vCard.
      * @var string
      */
-    const AGENT = 'AGENT';
+    public const AGENT = 'AGENT';
 
     /**
      * Defines the person's anniversary.
      * @var string
      */
-    const ANNIVERSARY = 'ANNIVERSARY';
+    public const ANNIVERSARY = 'ANNIVERSARY';
 
     /**
      * Date of birth of the individual associated with the vCard.
      * @var string
      */
-    const BDAY = 'BDAY';
+    public const BDAY = 'BDAY';
 
     /**
      * All vCards must start with this property.
      * @var string
      */
-    const BEGIN = 'BEGIN';
+    public const BEGIN = 'BEGIN';
 
     /**
      * A URL to use for sending a scheduling request to the person's calendar.
      * @var string
      */
-    const CALADRURI = 'CALADRURI';
+    public const CALADRURI = 'CALADRURI';
 
     /**
      * A URL to the person's calendar.
      * @var string
      */
-    const CALURI = 'CALURI';
+    public const CALURI = 'CALURI';
 
     /**
      * A list of "tags" that can be used to describe the object
      * represented by this vCard.
      * @var string
      */
-    const CATEGORIES = 'CATEGORIES';
+    public const CATEGORIES = 'CATEGORIES';
 
     /**
      * Describes the sensitivity of the information in the vCard.
      * @var string
      */
-    const CLASS_PROP = 'CLASS';
+    public const CLASS_PROP = 'CLASS';
 
     /**
      * Used for synchronizing different revisions of the same vCard.
      * @var string
      */
-    const CLIENTPIDMAP = 'CLIENTPIDMAP';
+    public const CLIENTPIDMAP = 'CLIENTPIDMAP';
 
     /**
      * The address for electronic mail communication with the vCard object.
      * @var string
      */
-    const EMAIL = 'EMAIL';
+    public const EMAIL = 'EMAIL';
 
     /**
      * All vCards must end with this property.
      * @var string
      */
-    const END = 'END';
+    public const END = 'END';
 
     /**
      * Defines a URL that shows when the person is
      * "free" or "busy" on their calendar.
      * @var string
      */
-    const FBURL = 'FBURL';
+    public const FBURL = 'FBURL';
 
     /**
      * The formatted name string associated with the vCard object.
      * @var string
      */
-    const FN = 'FN';
+    public const FN = 'FN';
 
     /**
      * Defines the person's gender.
      * @var string
      */
-    const GENDER = 'GENDER';
+    public const GENDER = 'GENDER';
 
     /**
      * Specifies a latitude and longitude.
      * @var string
      */
-    const GEO = 'GEO';
+    public const GEO = 'GEO';
 
     /**
      * Defines an instant messenger handle.
      * @var string
      */
-    const IMPP = 'IMPP';
+    public const IMPP = 'IMPP';
 
     /**
      * The public encryption key associated with the vCard object.
@@ -123,7 +122,7 @@ class Properties
      * or may be embedded in the vCard as a Base64 encoded block of text.
      * @var string
      */
-    const KEY = 'KEY';
+    public const KEY = 'KEY';
 
     /**
      * Defines the type of entity that this vCard represents: 'application',
@@ -131,7 +130,7 @@ class Properties
      * 'x-*' values may be used for experimental purposes.
      * @var string
      */
-    const KIND = 'KIND';
+    public const KIND = 'KIND';
 
     /**
      * Represents the actual text that should be put on the mailing label
@@ -139,13 +138,13 @@ class Properties
      * with the vCard (related to the ADR property).
      * @var string
      */
-    const LABEL = 'LABEL';
+    public const LABEL = 'LABEL';
 
     /**
      * Defines a language that the person speaks.
      * @var string
      */
-    const LANG = 'LANG';
+    public const LANG = 'LANG';
 
     /**
      * An image or graphic of the logo of the organization that is
@@ -154,13 +153,13 @@ class Properties
      * as a Base64 encoded block of text.
      * @var string
      */
-    const LOGO = 'LOGO';
+    public const LOGO = 'LOGO';
 
     /**
      * Type of email program used.
      * @var string
      */
-    const MAILER = 'MAILER';
+    public const MAILER = 'MAILER';
 
     /**
      * Defines a member that is part of the group that this vCard represents.
@@ -170,34 +169,34 @@ class Properties
      * The KIND property must be set to "group" in order to use this property.
      * @var string
      */
-    const MEMBER = 'MEMBER';
+    public const MEMBER = 'MEMBER';
 
     /**
      * A structured representation of the name of the person,
      * place or thing associated with the vCard object.
      * @var string
      */
-    const N = 'N';
+    public const N = 'N';
 
     /**
      * Provides a textual representation of the SOURCE property.
      * @var string
      */
-    const NAME = 'NAME';
+    public const NAME = 'NAME';
 
     /**
      * One or more descriptive/familiar names for the object
      * represented by this vCard.
      * @var string
      */
-    const NICKNAME = 'NICKNAME';
+    public const NICKNAME = 'NICKNAME';
 
     /**
      * Specifies supplemental information or a comment
      * that is associated with the vCard.
      * @var string
      */
-    const NOTE = 'NOTE';
+    public const NOTE = 'NOTE';
 
     /**
      * The name and optionally the unit(s) of the organization associated
@@ -206,7 +205,7 @@ class Properties
      * X.520 Organization Unit attribute.
      * @var string
      */
-    const ORG = 'ORG';
+    public const ORG = 'ORG';
 
     /**
      * An image or photograph of the individual associated with the vCard.
@@ -214,19 +213,19 @@ class Properties
      * as a Base64 encoded block of text.
      * @var string
      */
-    const PHOTO = 'PHOTO';
+    public const PHOTO = 'PHOTO';
 
     /**
      * The identifier for the product that created the vCard object.
      * @var string
      */
-    const PRODID = 'PRODID';
+    public const PRODID = 'PRODID';
 
     /**
      * States that the vCard is a vCard.
      * @var string
      */
-    const PROFILE = 'PROFILE';
+    public const PROFILE = 'PROFILE';
 
     /**
      * Another entity that the person is related to. Acceptable values include:
@@ -234,27 +233,27 @@ class Properties
      * - a UID which references the person's own vCard
      * @var string
      */
-    const RELATED = 'RELATED';
+    public const RELATED = 'RELATED';
 
     /**
      * A timestamp for the last time the vCard was updated.
      * @var string
      */
-    const REV = 'REV';
+    public const REV = 'REV';
 
     /**
      * The role, occupation, or business category of the vCard object
      * within an organization.
      * @var string
      */
-    const ROLE = 'ROLE';
+    public const ROLE = 'ROLE';
 
     /**
      * Defines a string that should be used when an application sorts
      * this vCard in some way.
      * @var string
      */
-    const SORT_STRING = 'SORT-STRING';
+    public const SORT_STRING = 'SORT-STRING';
 
     /**
      * By default, if this property is not grouped with other properties
@@ -263,20 +262,20 @@ class Properties
      * as a Base64 encoded block of text.
      * @var string
      */
-    const SOUND = 'SOUND';
+    public const SOUND = 'SOUND';
 
     /**
      * A URL that can be used to get the latest version of this vCard.
      * @var string
      */
-    const SOURCE = 'SOURCE';
+    public const SOURCE = 'SOURCE';
 
     /**
      * The canonical number string for a telephone number for telephony
      * communication with the vCard object.
      * @var string
      */
-    const TEL = 'TEL';
+    public const TEL = 'TEL';
 
     /**
      * Specifies the job title, functional position or function
@@ -284,33 +283,33 @@ class Properties
      * within an organization.
      * @var string
      */
-    const TITLE = 'TITLE';
+    public const TITLE = 'TITLE';
 
     /**
      * The time zone of the vCard object.
      * @var string
      */
-    const TZ = 'TZ';
+    public const TZ = 'TZ';
 
     /**
      * Specifies a value that represents a persistent,
      * globally unique identifier associated with the object.
      * @var string
      */
-    const UID = 'UID';
+    public const UID = 'UID';
 
     /**
      * A URL pointing to a website that represents the person in some way.
      * @var string
      */
-    const URL = 'URL';
+    public const URL = 'URL';
 
     /**
      * The version of the vCard specification. In versions 3.0 and 4.0,
      * this must come right after the BEGIN property.
      * @var string
      */
-    const VERSION = 'VERSION';
+    public const VERSION = 'VERSION';
 
     /**
      * Any XML data that is attached to the vCard. This is used if the vCard
@@ -318,7 +317,7 @@ class Properties
      * elements which are not part of the xCard standard.
      * @var string
      */
-    const XML = 'XML';
+    public const XML = 'XML';
 
     /**
      * Returns an array containing all properties allowed to be set in
@@ -348,7 +347,7 @@ class Properties
     {
         return [
             self::ADR, self::AGENT, self::ANNIVERSARY, self::BDAY, self::BEGIN,
-            self::CATEGORIES, self::CLASS, self::EMAIL, self::END, self::FN,
+            self::CATEGORIES, self::class, self::EMAIL, self::END, self::FN,
             self::GEO, self::IMPP, self::KEY, self::LABEL, self::LOGO,
             self::MAILER, self::N, self::NAME, self::NICKNAME, self::NOTE,
             self::ORG, self::PHOTO, self::PRODID, self::PROFILE, self::REV,

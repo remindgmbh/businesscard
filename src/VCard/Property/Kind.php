@@ -2,8 +2,7 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Properties;
-use \Remind\BusinessCard\VCard\Property\Property;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
  * Description of Kind
@@ -12,19 +11,18 @@ use \Remind\BusinessCard\VCard\Property\Property;
  */
 class Kind implements Property
 {
-
     /**
      * Name of the vCard property this class represents.
      * @var string
      */
-    const NAME = Properties::KIND;
+    public const NAME = Properties::KIND;
 
     /**
      * A vCard representing a single person or entity.
      * This is the default kind of vCard.
      * @var string
      */
-    const TYPE_INDIVIDUAL = 'individual';
+    public const TYPE_INDIVIDUAL = 'individual';
 
     /**
      * A vCard representing a group of persons or entities.
@@ -37,7 +35,7 @@ class Kind implements Property
      * "IETF Participants" or "Republican U.S. Senators").
      * @var string
      */
-    const TYPE_GROUP = 'group';
+    public const TYPE_GROUP = 'group';
 
     /**
      * A vCard representing an organization.  An organization
@@ -48,7 +46,7 @@ class Kind implements Property
      * division within a business or government, a club, an
      * association, or the like.
      */
-    const TYPE_ORGANISATION = 'org';
+    public const TYPE_ORGANISATION = 'org';
 
     /**
      * A named geographical place.  A location vCard will
@@ -58,7 +56,7 @@ class Kind implements Property
      * (perhaps "New England" or "The Seashore").
      * @var string
      */
-    const TYPE_LOCATION = 'location';
+    public const TYPE_LOCATION = 'location';
 
     /**
      *
@@ -95,7 +93,7 @@ class Kind implements Property
     /**
      *
      * @param string $type
-     * @return boolean
+     * @return bool
      */
     public function setType($type)
     {

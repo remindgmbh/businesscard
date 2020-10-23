@@ -2,24 +2,22 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Properties;
-use \Remind\BusinessCard\VCard\Property\Property;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
  * Description of Rev
  */
 class Rev implements Property
 {
+    /**
+     * @var string
+     */
+    public const NAME = Properties::REV;
 
     /**
      * @var string
      */
-    const NAME = Properties::REV;
-
-    /**
-     * @var string
-     */
-    const DATE_FORMAT = 'Ymd\THisT';
+    public const DATE_FORMAT = 'Ymd\THisT';
 
     /**
      *

@@ -2,21 +2,19 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Property\Property;
-use \Remind\BusinessCard\VCard\Properties;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
  * Description of Bday
  */
 class Bday implements Property
 {
-
-    const NAME = Properties::BDAY;
+    public const NAME = Properties::BDAY;
 
     /**
      *
      */
-    const DATE_FORMAT = 'Ymd';
+    public const DATE_FORMAT = 'Ymd';
 
     /**
      *
