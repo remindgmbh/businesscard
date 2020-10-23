@@ -2,10 +2,10 @@
 
 namespace Remind\BusinessCard;
 
-use \Remind\BusinessCard\VCard\Property\Property;
-use \Remind\BusinessCard\VCard\Property\Begin;
-use \Remind\BusinessCard\VCard\Property\End;
-use \Remind\BusinessCard\VCard\Property\Version;
+use Remind\BusinessCard\VCard\Property\Begin;
+use Remind\BusinessCard\VCard\Property\End;
+use Remind\BusinessCard\VCard\Property\Property;
+use Remind\BusinessCard\VCard\Property\Version;
 
 /**
  * Description of VCard
@@ -15,12 +15,11 @@ use \Remind\BusinessCard\VCard\Property\Version;
  */
 class VCard
 {
-
     /**
      * The line delimiter defined in RFC350 used for indiviudal lines.
      * @var string
      */
-    const CRLF = "\n";
+    public const CRLF = "\n";
 
     /**
      * Holds all set properties for the vCard.
@@ -54,7 +53,6 @@ class VCard
      */
     public function __construct(Version $version)
     {
-
         $this->version = $version;
 
         /* Intialize the properties */
