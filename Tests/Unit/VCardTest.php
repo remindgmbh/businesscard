@@ -2,9 +2,9 @@
 
 namespace Remind\BusinessCard\Tests\Unit;
 
-use \Remind\BusinessCard\VCard;
-use \Remind\BusinessCard\VCard\Property\Version;
-use \PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\TestCase;
+use Remind\BusinessCard\VCard;
+use Remind\BusinessCard\VCard\Property\Version;
 
 /**
  * Description of VCardTest

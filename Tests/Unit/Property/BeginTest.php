@@ -2,8 +2,8 @@
 
 namespace Remind\BusinessCard\Tests\Unit\Property;
 
-use \PHPUnit\Framework\TestCase;
-use \Remind\BusinessCard\VCard\Property\Begin;
+use PHPUnit\Framework\TestCase;
+use Remind\BusinessCard\VCard\Property\Begin;
 
 /**
  * Description of BeginTest

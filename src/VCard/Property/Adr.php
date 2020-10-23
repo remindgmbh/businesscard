@@ -2,11 +2,10 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Parameter\Geo as GeoParameter;
-use \Remind\BusinessCard\VCard\Parameter\Pref;
-use \Remind\BusinessCard\VCard\Parameter\Type;
-use \Remind\BusinessCard\VCard\Properties;
-use \Remind\BusinessCard\VCard\Property\Property;
+use Remind\BusinessCard\VCard\Parameter\Geo as GeoParameter;
+use Remind\BusinessCard\VCard\Parameter\Pref;
+use Remind\BusinessCard\VCard\Parameter\Type;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
  * This class represents the ADR property of a vCard.
@@ -15,12 +14,11 @@ use \Remind\BusinessCard\VCard\Property\Property;
  */
 class Adr implements Property
 {
-
     /**
      * Property name this class represents.
      * @var string
      */
-    const PROPERTY_NAME = Properties::ADR;
+    public const PROPERTY_NAME = Properties::ADR;
 
     /**
      * The post office box.

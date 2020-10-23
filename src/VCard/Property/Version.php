@@ -2,38 +2,36 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Properties;
-use \Remind\BusinessCard\VCard\Property\Property;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
  * Description of Version
  */
 class Version implements Property
 {
-
     /**
      * The vCard property this class represents.
      * @var string
      */
-    const NAME = Properties::VERSION;
+    public const NAME = Properties::VERSION;
 
     /**
      * Version identifier for version 2.1
      * @var string
      */
-    const VERSION_2_1 = '2.1';
+    public const VERSION_2_1 = '2.1';
 
     /**
      * Version identifier for version 3.0
      * @var string
      */
-    const VERSION_3_0 = '3.0';
+    public const VERSION_3_0 = '3.0';
 
     /**
      * Version identifier for version 4.0
      * @var string
      */
-    const VERSION_4_0 = '4.0';
+    public const VERSION_4_0 = '4.0';
 
     /**
      * Selected version for the vCard.
@@ -68,7 +66,7 @@ class Version implements Property
      * Check if the given property is valid for the set version this vCard uses.
      *
      * @param Property $property The property to check
-     * @return boolean Property is supported for set version
+     * @return bool Property is supported for set version
      */
     public function isPropertyAllowed(Property $property)
     {
@@ -78,13 +76,13 @@ class Version implements Property
 
         /* Switch the set version and get properties accordingly */
         switch ($this->version) {
-            case Version::VERSION_2_1:
+            case self::VERSION_2_1:
                 $properties = Properties::getVersion21Properties();
                 break;
-            case Version::VERSION_3_0:
+            case self::VERSION_3_0:
                 $properties = Properties::getVersion30Properties();
                 break;
-            case Version::VERSION_4_0:
+            case self::VERSION_4_0:
                 $properties = Properties::getVersion40Properties();
                 break;
         }
@@ -102,7 +100,7 @@ class Version implements Property
      * the last valid version will be used.
      *
      * @param string $version A version string
-     * @return boolean Will true or false if the version string is supported
+     * @return bool Will true or false if the version string is supported
      */
     public function setVersion($version)
     {
