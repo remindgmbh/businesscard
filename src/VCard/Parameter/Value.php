@@ -2,88 +2,85 @@
 
 namespace Remind\BusinessCard\VCard\Parameter;
 
-use \Remind\BusinessCard\VCard\Parameter\Parameter;
-
 /**
  * Description of Value
  */
 class Value
 {
+    /**
+     * @var string
+     */
+    public const NAME = Parameter::VALUE;
 
     /**
      * @var string
      */
-    const NAME = Parameter::VALUE;
+    public const TYPE_TEXT = 'text';
 
     /**
      * @var string
      */
-    const TYPE_TEXT = 'text';
+    public const TYPE_URI = 'uri';
 
     /**
      * @var string
      */
-    const TYPE_URI = 'uri';
+    public const TYPE_DATE = 'date';
 
     /**
      * @var string
      */
-    const TYPE_DATE = 'date';
+    public const TYPE_TIME = 'time';
 
     /**
      * @var string
      */
-    const TYPE_TIME = 'time';
+    public const TYPE_DATE_TIME = 'date-time';
 
     /**
      * @var string
      */
-    const TYPE_DATE_TIME = 'date-time';
+    public const TYPE_DATE_AND_OR_TIME = 'date-and-or-time';
 
     /**
      * @var string
      */
-    const TYPE_DATE_AND_OR_TIME = 'date-and-or-time';
+    public const TYPE_TIMESTAMP = 'timestamp';
 
     /**
      * @var string
      */
-    const TYPE_TIMESTAMP = 'timestamp';
+    public const TYPE_BOOLEAN = 'boolean';
 
     /**
      * @var string
      */
-    const TYPE_BOOLEAN = 'boolean';
+    public const TYPE_INTEGER = 'integer';
 
     /**
      * @var string
      */
-    const TYPE_INTEGER = 'integer';
+    public const TYPE_FLOAT = 'float';
 
     /**
      * @var string
      */
-    const TYPE_FLOAT = 'float';
+    public const TYPE_UTC_OFFSET = 'utc-offset';
 
     /**
      * @var string
      */
-    const TYPE_UTC_OFFSET = 'utc-offset';
+    public const TYPE_LANGUAGE_TAG = 'language-tag';
 
     /**
      * @var string
      */
-    const TYPE_LANGUAGE_TAG = 'language-tag';
+    public const TYPE_IANA_TOKEN = 'iana-token';
 
     /**
      * @var string
      */
-    const TYPE_IANA_TOKEN = 'iana-token';
-
-    /**
-     * @var string
-     */
-    const TYPE_X_NAME = 'x-name';
+    public const TYPE_X_NAME = 'x-name';
 
     /**
      *

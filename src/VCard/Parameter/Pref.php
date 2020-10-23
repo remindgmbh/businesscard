@@ -2,28 +2,25 @@
 
 namespace Remind\BusinessCard\VCard\Parameter;
 
-use \Remind\BusinessCard\VCard\Parameter\Parameter;
-
 /**
  * Description of Pref
  */
 class Pref
 {
-
     /**
      * @var string
      */
-    const NAME = Parameter::PREF;
+    public const NAME = Parameter::PREF;
 
     /**
      * @var int
      */
-    const LOWEST = 100;
+    public const LOWEST = 100;
 
     /**
      * @var int
      */
-    const HIGHEST = 1;
+    public const HIGHEST = 1;
 
     /**
      *

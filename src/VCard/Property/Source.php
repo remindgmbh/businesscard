@@ -2,19 +2,17 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Properties;
-use \Remind\BusinessCard\VCard\Property\Property;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
  * Description of Source
  */
 class Source implements Property
 {
-
     /**
      * @var string
      */
-    const NAME = Properties::SOURCE;
+    public const NAME = Properties::SOURCE;
 
     /**
      *

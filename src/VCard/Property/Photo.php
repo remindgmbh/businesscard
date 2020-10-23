@@ -2,27 +2,24 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Properties;
-use \Remind\BusinessCard\VCard\Property\Property;
-use \Remind\BusinessCard\VCard\Property\Version;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
  * Description of Photo
  */
 class Photo implements Property
 {
-
     /**
      * Name of the property this class represents
      * @var string
      */
-    const NAME = Properties::PHOTO;
+    public const NAME = Properties::PHOTO;
 
     /**
      * Encoding for inline images.
      * @var string
      */
-    const ENCODING = 'base64';
+    public const ENCODING = 'base64';
 
     /**
      * Image type like jpeg or png
@@ -71,7 +68,6 @@ class Photo implements Property
      */
     public function __toString()
     {
-
         switch ($this->version->getVersion()) {
             case Version::VERSION_2_1:
                 return $this->returnVersion21Formatted();
@@ -139,7 +135,6 @@ class Photo implements Property
      */
     protected function returnVersion40Formatted()
     {
-
         if (empty($this->image)) {
             return '';
         }
