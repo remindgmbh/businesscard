@@ -7,59 +7,58 @@ namespace Remind\BusinessCard\VCard\Parameter;
  */
 class Parameter
 {
+    /**
+     * @var string
+     */
+    public const LANGUAGE = 'LANGUAGE';
 
     /**
      * @var string
      */
-    const LANGUAGE = 'LANGUAGE';
+    public const VALUE = 'VALUE';
 
     /**
      * @var string
      */
-    const VALUE = 'VALUE';
+    public const PREF = 'PREF';
 
     /**
      * @var string
      */
-    const PREF = 'PREF';
+    public const ALTID = 'ALTID';
 
     /**
      * @var string
      */
-    const ALTID = 'ALTID';
+    public const PID = 'PID';
 
     /**
      * @var string
      */
-    const PID = 'PID';
+    public const TYPE = 'TYPE';
 
     /**
      * @var string
      */
-    const TYPE = 'TYPE';
+    public const MEDIATYPE = '';
 
     /**
      * @var string
      */
-    const MEDIATYPE = '';
+    public const CALSCALE = 'CALSCALE';
 
     /**
      * @var string
      */
-    const CALSCALE = 'CALSCALE';
+    public const SORT_AS = 'SORT-AS';
 
     /**
      * @var string
      */
-    const SORT_AS = 'SORT-AS';
+    public const GEO = 'GEO';
 
     /**
      * @var string
      */
-    const GEO = 'GEO';
-
-    /**
-     * @var string
-     */
-    const TZ = 'TZ';
+    public const TZ = 'TZ';
 }

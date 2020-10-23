@@ -2,19 +2,17 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Properties;
-use \Remind\BusinessCard\VCard\Property\Property;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
  * Description of Org
  */
 class Org implements Property
 {
-
     /**
      * @var string
      */
-    const NAME = Properties::ORG;
+    public const NAME = Properties::ORG;
 
     /**
      *

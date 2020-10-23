@@ -2,19 +2,17 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Properties;
-use \Remind\BusinessCard\VCard\Property\Property;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
  * Description of Title
  */
 class Title implements Property
 {
-
     /**
      * @var string
      */
-    const NAME = Properties::TITLE;
+    public const NAME = Properties::TITLE;
 
     /**
      *

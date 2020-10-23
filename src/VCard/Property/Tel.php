@@ -2,22 +2,20 @@
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Parameter\Pref;
-use \Remind\BusinessCard\VCard\Parameter\TypeTelephone;
-use \Remind\BusinessCard\VCard\Parameter\Value;
-use \Remind\BusinessCard\VCard\Properties;
-use \Remind\BusinessCard\VCard\Property\Property;
+use Remind\BusinessCard\VCard\Parameter\Pref;
+use Remind\BusinessCard\VCard\Parameter\TypeTelephone;
+use Remind\BusinessCard\VCard\Parameter\Value;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
  * Description of Tel
  */
 class Tel implements Property
 {
-
     /**
      * @var string
      */
-    const NAME = Properties::TEL;
+    public const NAME = Properties::TEL;
 
     /**
      *
@@ -66,7 +64,7 @@ class Tel implements Property
 
         return implode(';', [
             self::NAME, $this->value, $this->pref, $this->type
-        ]). ':' . $this->content;
+        ]) . ':' . $this->content;
     }
 
     public function getName()
