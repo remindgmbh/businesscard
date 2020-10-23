@@ -1,7 +1,7 @@
 ### IDE ###
-nbproject/
-.vscode/
-.idea/
+nbproject
+.vscode
+.idea
 
 ### Composer ###
 composer.phar
@@ -10,11 +10,6 @@ composer.phar
 *.log
 cache.properties
 
-### CI ###
-.build/bin/
-.build/vendor/
-.build/web/
-.build/logs/
-.build/coverage/
-.build/pdepend/
-.build/phpdox/
+### Development ###
+coverage.xml
+/vendor/

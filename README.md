@@ -1,18 +1,22 @@
 # REMIND - Businesscard library
 
-This library provides a PHP library for generating business cards based on
-the vCard format in various formats.
+This library provides an object oriented aproach for generating vCard files.
 
-![remind-badge](https://img.shields.io/badge/author-REMIND-black.svg?style=flat-square)
-![library-badge](https://img.shields.io/badge/type-library-green.svg?style=flat-square)
-![php72-badge](https://img.shields.io/badge/PHP-7.2-yellow.svg?style=flat-square)
-![license-badge](https://img.shields.io/badge/license-GPL--3.0-blue.svg?style=flat-square)
-![version-badge](https://img.shields.io/badge/version-1.2.0-lightgrey.svg?style=flat-square)
+[travis-img]: https://img.shields.io/travis/remindgmbh/businesscard.svg?style=flat-square
+[codecov-img]: https://img.shields.io/codecov/c/github/remindgmbh/businesscard.svg?style=flat-square
+[php-v-img]: https://img.shields.io/packagist/php-v/remind/businesscard?style=flat-square
+[github-issues-img]: https://img.shields.io/github/issues/remindgmbh/businesscard.svg?style=flat-square
+[contrib-welcome-img]: https://img.shields.io/badge/contributions-welcome-blue.svg?style=flat-square
+[license-img]: https://img.shields.io/github/license/remindgmbh/businesscard.svg?style=flat-square
+[styleci-img]: https://styleci.io/repos/306764901/shield
 
-## Build Status
-
-[![build-master](https://jenkins.remind.de/buildStatus/icon?job=rmnd_businesscard%2Fmaster&subject=master)](https://jenkins.remind.de/job/rmnd_businesscard/)
-[![build-develop](https://jenkins.remind.de/buildStatus/icon?job=rmnd_businesscard%2Fdevelop&subject=develop)](https://jenkins.remind.de/job/rmnd_businesscard/)
+[![travis-img]](https://travis-ci.com/github/remindgmbh/businesscard)
+[![codecov-img]](https://codecov.io/gh/remindgmbh/businesscard)
+[![styleci-img]](https://github.styleci.io/repos/306764901)
+[![php-v-img]](https://packagist.org/packages/remind/businesscard)
+[![github-issues-img]](https://github.com/remindgmbh/businesscard/issues)
+[![contrib-welcome-img]](https://github.com/remindgmbh/businesscard/blob/master/CONTRIBUTING.md)
+[![license-img]](https://github.com/remindgmbh/businesscard/blob/master/LICENSE)
 
 --------------------------------------------------------------------------------
 

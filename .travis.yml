@@ -1,0 +1,22 @@
+language: php
+
+php:
+    - 7.2
+    - 7.3
+    - 7.4
+
+notifications:
+    email:
+        on_success: never
+        
+    webhooks:
+        - https://outlook.office.com/webhook/5fc0971d-1679-464f-a6bf-7a764b449d7e@bc56f797-60e9-407b-bc2c-e79f2058cd21/TravisCI/ff0950008ce34f25a712223cd3d95d0e/baa29ec6-e36b-4136-8ceb-9adbb3949188
+
+before_script:
+    - travis_retry composer self-update
+    - travis_retry composer install
+
+script:
+    - composer run test
+
+after_success: bash <(curl -s https://codecov.io/bash)

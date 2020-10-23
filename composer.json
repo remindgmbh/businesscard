@@ -1,6 +1,6 @@
 {
-    "name": "remind/rmnd-businesscard",
-    "description": "rmnd_businesscard.",
+    "name": "remind/businesscard",
+    "description": "This library provides an object oriented aproach for generating vCard files",
     "type": "library",
     "keywords": ["remind", "vcard", "vcf", "library"],
     "license": ["GPL-3.0-or-later"],
@@ -26,48 +26,29 @@
     },
     "config": {
         "optimize-autoloader": true,
-        "apcu-autoloader": true,
-        "vendor-dir": ".build/vendor",
-        "bin-dir": ".build/bin"
+        "apcu-autoloader": true
     },
     "require": {
-        "php": "^7.2.0",
-        "ramsey/uuid": "^3.9.2"
+        "php": "^7.2.0"
     },
     "require-dev": {
-        "friendsofphp/php-cs-fixer": "^2.15.0",
-        "pdepend/pdepend": "^2.5.2",
         "phploc/phploc": "^5.0.0",
-        "phpmd/phpmd": "^2.6.0",
+        "phpmd/phpmd": "^2.9.1",
         "phpunit/phpunit": "^8.5.2",
         "remind/confluence-changelog": "^0.1.2",
-        "sebastian/phpcpd": "^4.1.0",
-        "squizlabs/php_codesniffer": "^3.4.2",
-        "theseer/phpdox": "^0.12.0"
+        "sebastian/phpcpd": "^4.1.0"
     },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://composer.remind.de/"
-        }
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "pdepend": "@php ./.build/vendor/pdepend/pdepend/src/bin/pdepend --jdepend-xml=./.build/logs/jdepend.xml --quiet ./src",
-        "phploc": "@php ./.build/vendor/phploc/phploc/phploc --count-tests --log-csv ./.build/logs/phploc.csv --log-xml ./.build/logs/phploc.xml --quiet ./src",
-        "pmd": "@php ./.build/vendor/phpmd/phpmd/src/bin/phpmd ./src xml ./.build/phpmd.xml --reportfile ./.build/logs/pmd.xml --ignore-violations-on-exit",
-        "codesniffer": "@php ./.build/vendor/squizlabs/php_codesniffer/bin/phpcs --report=checkstyle --report-file=./.build/logs/phpcs-results.xml --standard=PSR2 --extensions=php --ignore=autoload.php -q ./src ./Tests",
-        "phpcpd": "@php ./.build/vendor/sebastian/phpcpd/phpcpd --log-pmd ./.build/logs/pmd-cpd.xml --quiet ./src ./Tests",
-        "phpcbf": "@php .build/vendor/squizlabs/php_codesniffer/bin/phpcbf --standard=PSR2 ./src ./Tests",
-        "test": "@php ./.build/vendor/phpunit/phpunit/phpunit --bootstrap ./.build/vendor/autoload.php --testdox --log-junit ./.build/logs/unitreport.xml --coverage-html ./.build/coverage/html --coverage-xml ./.build/coverage/xml --coverage-clover ./.build/coverage/coverage.xml --whitelist ./src ./Tests/Unit",
-        "phpdox": "@php ./.build/vendor/theseer/phpdox/phpdox -f ./.build/phpdox.xml",
-        "conflog": "@php ./.build/vendor/remind/confluence-changelog/bin/conflog conflog:document --spaceKey REBUSICRDLIB",
+        "phploc": "@php vendor/phploc/phploc/phploc --count-tests ./src ./Tests",
+        "pmd": "@php vendor/phpmd/phpmd/src/bin/phpmd ./src ansi ./.build/phpmd.xml --ignore-violations-on-exit",
+        "phpcpd": "@php vendor/sebastian/phpcpd/phpcpd ./src ./Tests",
+        "test": "@php vendor/phpunit/phpunit/phpunit --bootstrap=vendor/autoload.php --whitelist=./src/ --testdox --coverage-clover=coverage.xml ./Tests/",
+        "conflog": "@php vendor/remind/confluence-changelog/bin/conflog conflog:document --spaceKey REBUSICRDLIB",
         "static-analysis": [
-            "@pdepend",
             "@phploc",
             "@pmd",
-            "@codesniffer",
             "@phpcpd",
             "@test"
         ]
