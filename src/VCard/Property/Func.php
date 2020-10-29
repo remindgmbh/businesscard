@@ -1,10 +1,9 @@
 <?php
 
-declare (strict_types=1);
+declare(strict_types=1);
 
 namespace Remind\BusinessCard\VCard\Property;
 
-use Remind\BusinessCard\VCard\Property\Property;
 use Remind\BusinessCard\VCard\Properties;
 
 /**
@@ -15,7 +14,7 @@ class Func implements Property
     /**
      * @var string
      */
-    const NAME = Properties::FN;
+    public const NAME = Properties::FN;
 
     /**
      *
