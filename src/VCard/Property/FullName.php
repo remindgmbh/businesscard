@@ -9,7 +9,7 @@ use Remind\BusinessCard\VCard\Properties;
 /**
  * Description of Fn
  */
-class Func implements Property
+class FullName implements Property
 {
     /**
      * @var string
