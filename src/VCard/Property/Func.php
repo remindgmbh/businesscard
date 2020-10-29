@@ -1,16 +1,17 @@
 <?php
 
+declare (strict_types=1);
+
 namespace Remind\BusinessCard\VCard\Property;
 
-use \Remind\BusinessCard\VCard\Property\Property;
-use \Remind\BusinessCard\VCard\Properties;
+use Remind\BusinessCard\VCard\Property\Property;
+use Remind\BusinessCard\VCard\Properties;
 
 /**
  * Description of Fn
  */
-class Fn implements Property
+class Func implements Property
 {
-
     /**
      * @var string
      */
