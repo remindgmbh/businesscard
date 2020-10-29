@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types=1);
+
 namespace Remind\BusinessCard\VCard\Parameter;
 
 use Remind\BusinessCard\VCard\Property\Version;

@@ -1,5 +1,7 @@
 <?php
 
+declare (strict_types=1);
+
 namespace Remind\BusinessCard\VCard\Property;
 
 use Remind\BusinessCard\VCard\Parameter\Pref;
