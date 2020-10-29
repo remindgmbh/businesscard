@@ -47,8 +47,10 @@ Implementation pending.
 ```php
 <?php
 
-use \Remind\BusinessCard\VCard;
-use \Remind\BusinessCard\Property\Version;
+use Remind\BusinessCard\VCard;
+use Remind\BusinessCard\Property\Func;
+use Remind\BusinessCard\Property\N;
+use Remind\BusinessCard\Property\Version;
 
 $version = new Version();
 $version->setVersion(Version::VERSION_4_0);
@@ -59,7 +61,7 @@ $n = new N();
 $n->setGivenName('John');
 $n->setFamilyName('Doe');
 
-$fn = new Fn('John Doe');
+$fn = new Func('John Doe');
 
 $vCard->addProperty($n);
 $vCard->addProperty($fn);
