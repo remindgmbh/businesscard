@@ -29,27 +29,28 @@
         "apcu-autoloader": true
     },
     "require": {
-        "php": "^7.3.0"
+        "php": "^7.4.0 | ^8.0.0"
     },
     "require-dev": {
-        "phploc/phploc": "^7.0.0",
         "phpmd/phpmd": "^2.9.1",
         "phpunit/phpunit": "^9.0.0",
-        "remind/confluence-changelog": "^0.2.0",
-        "sebastian/phpcpd": "^6.0.0"
+        "remind/confluence-changelog": "^0.3.0",
+        "sebastian/phpcpd": "^6.0.0",
+        "squizlabs/php_codesniffer": "^3.5.0"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "phploc": "@php vendor/phploc/phploc/phploc --count-tests ./src ./Tests",
-        "pmd": "@php vendor/phpmd/phpmd/src/bin/phpmd ./src ansi ./.build/phpmd.xml --ignore-violations-on-exit",
-        "phpcpd": "@php vendor/sebastian/phpcpd/phpcpd ./src ./Tests",
+        "pmd": "@php vendor/phpmd/phpmd/src/bin/phpmd ./src ansi ./phpmd.xml --ignore-violations-on-exit",
+        "phpcpd": "@php vendor/sebastian/phpcpd/phpcpd ./src",
         "test": "@php vendor/phpunit/phpunit/phpunit --bootstrap=vendor/autoload.php --whitelist=./src/ --testdox --coverage-clover=coverage.xml ./Tests/",
         "conflog": "@php vendor/remind/confluence-changelog/bin/conflog conflog:document --spaceKey REBUSICRDLIB",
+        "phpcs": "@php vendor/squizlabs/php_codesniffer/bin/phpcs --report=full --standard=PSR12 --extensions=php ./src ./Tests",
+        "phpcbf": "@php vendor/squizlabs/php_codesniffer/bin/phpcbf --standard=PSR12 ./src ./Tests",
         "static-analysis": [
-            "@phploc",
             "@pmd",
             "@phpcpd",
+            "@phpcs",
             "@test"
         ]
     }
