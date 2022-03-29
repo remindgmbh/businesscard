@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Remind\BusinessCard\VCard\Property;
 
+use DateTime;
 use Remind\BusinessCard\VCard\Properties;
 
 /**
@@ -32,7 +33,7 @@ class Rev implements Property
      */
     public function __construct()
     {
-        $this->date = new \DateTime();
+        $this->date = new DateTime();
     }
 
     /**

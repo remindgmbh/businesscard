@@ -14,7 +14,7 @@ class FullName implements Property
     /**
      * @var string
      */
-    public const NAME = Properties::FN;
+    public const NAME = Properties::FULLNAME;
 
     /**
      *

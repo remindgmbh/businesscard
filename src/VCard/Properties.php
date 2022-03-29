@@ -98,7 +98,7 @@ class Properties
      * The formatted name string associated with the vCard object.
      * @var string
      */
-    public const FN = 'FN';
+    public const FULLNAME = 'FN';
 
     /**
      * Defines the person's gender.
@@ -331,7 +331,7 @@ class Properties
     {
         return [
             self::ADR, self::AGENT, self::BDAY, self::BEGIN, self::CATEGORIES,
-            self::EMAIL, self::END, self::FN, self::GEO, self::KEY, self::LABEL,
+            self::EMAIL, self::END, self::FULLNAME, self::GEO, self::KEY, self::LABEL,
             self::LOGO, self::MAILER, self::N, self::NOTE, self::ORG,
             self::PHOTO, self::PROFILE, self::REV, self::ROLE,
             self::SORT_STRING, self::SOUND, self::SOURCE, self::TEL,
@@ -349,7 +349,7 @@ class Properties
     {
         return [
             self::ADR, self::AGENT, self::ANNIVERSARY, self::BDAY, self::BEGIN,
-            self::CATEGORIES, self::class, self::EMAIL, self::END, self::FN,
+            self::CATEGORIES, self::class, self::EMAIL, self::END, self::FULLNAME,
             self::GEO, self::IMPP, self::KEY, self::LABEL, self::LOGO,
             self::MAILER, self::N, self::NAME, self::NICKNAME, self::NOTE,
             self::ORG, self::PHOTO, self::PRODID, self::PROFILE, self::REV,
@@ -369,7 +369,7 @@ class Properties
         return [
             self::ADR, self::ANNIVERSARY, self::BDAY, self::BEGIN,
             self::CATEGORIES, self::CLIENTPIDMAP, self::EMAIL, self::END,
-            self::FBURL, self::FN, self::GENDER, self::GEO, self::IMPP,
+            self::FBURL, self::FULLNAME, self::GENDER, self::GEO, self::IMPP,
             self::KEY, self::KIND, self::LANG, self::LOGO, self::MEMBER,
             self::N, self::NICKNAME, self::NOTE, self::ORG, self::PHOTO,
             self::PRODID, self::RELATED, self::REV, self::ROLE, self::SOUND,
@@ -398,7 +398,7 @@ class Properties
      */
     public static function getVersion30RequiredProperties(): array
     {
-        return [ self::BEGIN, self::END, self::FN, self::N, self::VERSION ];
+        return [ self::BEGIN, self::END, self::FULLNAME, self::N, self::VERSION ];
     }
 
     /**
@@ -407,7 +407,7 @@ class Properties
      */
     public static function getVersion40RequiredProperties(): array
     {
-        return [ self::BEGIN, self::END, self::FN, self::VERSION ];
+        return [ self::BEGIN, self::END, self::FULLNAME, self::VERSION ];
     }
 
     /**
