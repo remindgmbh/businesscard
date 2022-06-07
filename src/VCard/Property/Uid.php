@@ -46,9 +46,9 @@ class Uid implements Property
         // UID:urn:uuid:da418720-3754-4631-a169-db89a02b831b
         if ($this->isFreetext) {
             return self::NAME . ':' . $this->uuid;
-        } else {
-            return self::NAME . ':urn:uuid:' . $this->uuid;
         }
+
+        return self::NAME . ':urn:uuid:' . $this->uuid;
     }
 
     public function getName()

@@ -102,11 +102,11 @@ class Photo implements Property
         if ($this->isurl) {
             /* PHOTO;JPEG:http://example.org/photo.jpg */
             return $ident . ':' . $this->image;
-        } else {
-            /* PHOTO;JPEG;ENCODING=BASE64:[base64-data] */
-            return $ident . ';ENCODING=' . strtoupper(self::ENCODING) . ':'
-                . base64_encode(file_get_contents($this->image));
         }
+
+        /* PHOTO;JPEG;ENCODING=BASE64:[base64-data] */
+        return $ident . ';ENCODING=' . strtoupper(self::ENCODING) . ':'
+            . base64_encode(file_get_contents($this->image));
     }
 
     /**
@@ -124,11 +124,11 @@ class Photo implements Property
         if ($this->isUrl) {
             /* PHOTO;TYPE=JPEG:http://example.org/photo.jpg */
             return $ident . ':' . $this->image;
-        } else {
-            /* PHOTO;TYPE=JPEG;ENCODING=b:[base64-data] */
-            return $ident . ';ENCODING=b:'
-                . base64_encode(file_get_contents($this->image));
         }
+
+        /* PHOTO;TYPE=JPEG;ENCODING=b:[base64-data] */
+        return $ident . ';ENCODING=b:'
+            . base64_encode(file_get_contents($this->image));
     }
 
     /**
@@ -144,12 +144,12 @@ class Photo implements Property
         if ($this->isUrl) {
             /* PHOTO;MEDIATYPE=image/jpeg:http://example.org/photo.jpg */
             return self::NAME . ';MEDIATYPE=' . $this->mimeType . ':' . $this->image;
-        } else {
-            /* PHOTO:data:image/jpeg;base64,[base64-data] */
-            return self::NAME . ':data:' . $this->mimeType . ';'
-                . self::ENCODING . ','
-                . base64_encode(file_get_contents($this->image));
         }
+
+        /* PHOTO:data:image/jpeg;base64,[base64-data] */
+        return self::NAME . ':data:' . $this->mimeType . ';'
+            . self::ENCODING . ','
+            . base64_encode(file_get_contents($this->image));
     }
 
     /**
